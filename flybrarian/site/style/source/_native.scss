@@ -1,7 +1,13 @@
 /* Styling for native HTML elements */
-
-body {	
+html, body {
 	box-sizing: border-box;
-	padding: 0;
-	margin: 0;	
+}
+
+div {
+	box-sizing: inherit;
+}
+
+body {
+	color: 				$site-text; 
+	background-color: 	$site-background;
 }

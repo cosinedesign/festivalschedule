@@ -1,0 +1,25 @@
+
+$darkgreen:				#116611;
+$midgreen:				#66CC66;
+$green:					#00FF00;
+$yellowgreen: 			#ADFF2F;
+$yellow: 				#FFFF00;
+
+/* grayscales */
+$deepgray: 				#1F1F1F;
+
+/* disambiguation */
+$background:			$deepgray;
+
+
+/* Themes 		*/
+$site-background:		$background;
+$site-text:				$yellowgreen;
+
+$feature-text:			$darkgreen;
+
+
+/* Sizing */
+$quarter-hour:			15px;
+$half-hour:				$quarter-hour * 2;
+$hour:					$half-hour * 2;

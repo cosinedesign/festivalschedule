@@ -1,0 +1,73 @@
+
+.schedule {
+	display: 			flex;
+	flex-direction: 	columns;
+	color: 				$feature-text;
+}
+
+.header {
+	font: 14px arial bold;
+	text-align: center;
+}
+
+.schedule .header {
+	height: 30px;
+}
+
+
+.timeslots {
+	width: 60px;
+	background-color: #ADFF2F;
+}
+
+.timeslot {
+	padding: 8px;
+	border: 1px solid #FFFF00;
+	font: bold 12px arial;
+	text-align: center;		
+	padding-top: 8px;
+}
+
+.lineups {
+	max-width: 100%;
+	display: flex;
+	overflow-x: auto;
+	background-color: #ADFF2F;
+}
+
+.lineup .header { 
+	padding: 6px;
+	border: 1px solid #FFFF00;
+	font-weight: bold;	
+}
+
+.lineup {
+	min-width: 100px;
+	max-width: 200px;
+	width: 200px;
+}
+
+.lineup .event {
+	width: 100%;
+	
+	padding: 6px;
+	
+	border: 			1px solid #ADFF2F;
+	background-color:	#FFFF00;
+}
+
+.hour {
+	height: 		$hour;
+}
+
+.halfhour {
+	height: 		$half-hour;
+}
+
+.quarterhour {
+	height: 		$quarter-hour;
+}
+
+.threequarterhour {
+	height: 		$quarter-hour * 3;
+}
