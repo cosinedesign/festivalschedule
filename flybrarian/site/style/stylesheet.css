@@ -1,0 +1,58 @@
+body {
+	padding: 0;
+	margin: 0;
+
+	/* https://css-tricks.com/box-sizing/ */
+	box-sizing: border-box;
+}
+
+.dev {
+	border: 1px solid blue;
+}
+
+.layout {
+	display: flex;
+	height: 100vh;
+	min-height: 100vh;
+	max-height: 100vh;
+	border-color: orange;
+}
+
+.menu {	
+	min-height: 100%;
+	height: 100%;
+	width: 200px;
+}
+.panel {
+	min-height: 100%;
+	height: 100%;
+}
+
+.artist {
+
+}
+.camp {
+
+}
+
+
+/* group of vertical days */
+.week {}
+
+/* Vertical day layout */
+.day {}
+
+/* single event on a day */
+.event {}
+
+.schedule {
+	display: flex;
+	height: 100%;
+	min-height: 100%;
+	border-color: red;
+}
+
+.schedule .lineup {
+	height: 100%;
+	width: 100px;
+}

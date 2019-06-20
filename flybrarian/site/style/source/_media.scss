@@ -1,0 +1,49 @@
+$breakpoint-small:              480px;
+$breakpoint-small-height:       $breakpoint-small;
+$breakpoint-small-maxHeight:    ($breakpoint-small - .1);
+$breakpoint-small-width:        768px;
+$breakpoint-small-maxWidth:     ($breakpoint-small-width - .1);
+
+$breakpoint-medium:             1024px; // Above this width is large
+$breakpoint-medium-minWidth:    $breakpoint-small-width;
+$breakpoint-medium-maxWidth:    ($breakpoint-medium - .1);
+$breakpoint-medium-minHeight:   $breakpoint-small-height; 
+
+$breakpoint-large-minWidth:     $breakpoint-medium;
+$breakpoint-large-minHeight:    $breakpoint-small-height;
+$breakpoint-large-wide-maxWidth: 1279.9px;
+/*
+    “Small UI” ( list-style rendering seen in the “small UI” invision design, with width stretched edge-to-edge )
+    - Any width smaller than 768px, regardless of height and orientation (supports small landscape)
+    - Any height smaller than 480px (as Large/Medium does not render well < 480px high)
+*/
+$ui-small:                  "(max-height: $breakpoint-small-maxHeight), (max-width: $breakpoint-small-maxWidth)";
+$ui-small-landscape:        "(orientation: landscape) and (max-height: $breakpoint-small-maxHeight)";
+$ui-small-portrait:         "(orientation: portrait) and (max-width: $breakpoint-small-maxWidth)";
+/*
+    “Medium UI” ( Table-style rendering as seen in “large UI” invision design, but with reduced margins as shown on some pages in the medium UI, and some changes in how buttons and other elements stack vertically)
+    - Height greater than 480px AND width between 768px and 1024px
+*/
+$ui-medium:                 "(min-width: $breakpoint-medium-minWidth) and (max-width: $breakpoint-medium-maxWidth) and (min-height: $breakpoint-medium-minHeight)";
+$ui-medium-portrait:        "(orientation: portrait) and (min-width: $breakpoint-medium-minWidth) and (max-width: $breakpoint-medium-maxWidth) and (min-height: $breakpoint-medium-minHeight)";
+$ui-medium-landscape:       "(orientation: landscape) and (min-width: $breakpoint-medium-minWidth) and (max-width: $breakpoint-medium-maxWidth) and (min-height: $breakpoint-medium-minHeight)";
+/*
+    “Large UI” (Large UI invision design)
+    - Height greater than 480px AND width greater than 1024px
+*/
+$ui-large-all:              "(min-width: $breakpoint-medium-minWidth) and (min-height: $breakpoint-small-height)";
+$ui-large-portrait-all:     "(orientation: portrait) and (min-width: $breakpoint-medium-minWidth) and (min-height: $breakpoint-small-height)";
+$ui-large-landscape:        "(orientation: landscape) and (min-width: $breakpoint-large-minWidth) and (min-height: $breakpoint-large-minHeight)";
+$ui-large:                  "(min-width: $breakpoint-large-minWidth) and (min-height: $breakpoint-large-minHeight)";
+$ui-large-wide:				"(min-width: $breakpoint-large-minWidth) and (max-width: $breakpoint-large-wide-maxWidth)";
+
+/* Large and Medium, Any Orientation  */
+@media #{$ui-large-all} {
+
+}
+
+/* Small Portrait ONLY */
+@media #{$ui-small-portrait} { }
+
+/* Small, Landscape ONLY */
+@media #{$ui-small-landscape} { }
