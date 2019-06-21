@@ -1,11 +1,4 @@
 
-// aliasing
-const ev = firefly.event,
-	a = firefly.artist,
-	c = firefly.camp,
-	d = firefly.date,
-	days = firefly.days;
-
 const genres = {
 		bass: "bass",
 		breaks: "breaks",
@@ -19,6 +12,14 @@ const genres = {
 		triphop: "triphop",
 		world: "world music"
 	};
+
+// aliasing
+const ev = festival.model.event,
+	a = festival.model.artist,
+	c = festival.model.stage,
+	d = festival.model.date,
+	days = festival.config.days;
+
 const artists = {
 	"acidBrunchClub": a("Acid Brunch Club"),
 	"alexxxan": a("AlexXxan", [genres.techno]),
@@ -93,7 +94,7 @@ const data = [
 	// diode
 	// strange maine
 	ev(camps.strangeMaine, [artists.ArcRunner, artists.Saphire], d(days.thurs.day, 21), d(days.fri.day, 1)),
-	ev(camps.strangeMaine, artists.Saphire, d(days.fri.day, 21), d(days.sat.day, 1)),
+	ev(camps.strangeMaine, artists.Saphire, d(days.fri.day, 21), d(days.satur.day, 1)),
 	
 	// Unsorted / known sets...
 	ev(camps.femmeDomme, artists.cosinezero, d(days.sun.day, 1)),
@@ -184,7 +185,7 @@ const data = [
 	ev(camps.lamp, artists.Psylander, d(days.sun.day, 3)),
 	ev(camps.lamp, artists.garyCarlow, d(days.sun.day, 4), d(days.sun.day, 6))
 
-
-
-
 ];
+
+flybrarian.data = data;
+flybrarian.camps = camps;
