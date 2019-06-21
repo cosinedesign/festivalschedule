@@ -13,7 +13,7 @@ const cosinedesign = {
 				const el = document.createElement(tagName);
 				if (className) el.className = className;
 				return el;
-			},
+			}
 		},
 		view: {
 			/* View builder ***************************************************************************/

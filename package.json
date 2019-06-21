@@ -1,0 +1,11 @@
+{
+  "name": "festival-schedule",
+  "description": "tools for creating festival event lineups",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0"
+  }
+}

@@ -138,7 +138,7 @@ const views = {
 			function () {},
 			{}
 		);
-	},
+	}
 };
 
 // aliasing
