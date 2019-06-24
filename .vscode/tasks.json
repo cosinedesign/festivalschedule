@@ -18,5 +18,14 @@
                 "cwd": "${workspaceRoot}"
             }
         },
+        {
+            "label": "Gulp Watch",
+            "command": "${workspaceRoot}\\gulp",
+            "args": ["build-test-watch"],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "runOptions": { "runOn": "folderOpen" }
+        }
     ]
 }

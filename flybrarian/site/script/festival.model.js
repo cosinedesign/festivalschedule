@@ -31,14 +31,17 @@ const festival = {
 			// todo: parse day / start into date 
 			const e = {
 				artist: artist,
-				camp: stage,		
+				stage: stage,		
 				start: start,
 				end: end,
 				description: description
 			};
-			
-			e.camp.events.add(e);
-			
+
+			// Need to be able to create empty events
+			if (stage) {
+				e.stage.events.add(e);
+			}
+
 			return e;
 		},
 		artist: function (name, genres, affiliation) {
@@ -48,6 +51,7 @@ const festival = {
 				affiliation: affiliation
 			};
 		},
+		// Stage, soundsystem, or soundcamp
 		stage: function (name, location, description) {
 			return {
 				display: name,
