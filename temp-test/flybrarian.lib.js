@@ -605,8 +605,8 @@ const flybrarian = {
 	function getGapFiller(gap) {
 		const fillers = [];
 		const remainingGap = {
-			start: new Date(gap.start),
-			end: new Date(gap.end)
+			start: new Date(gap.prev.end),
+			end: new Date(gap.next.start)
 		};
 
 		var gapEnd = null,
@@ -623,17 +623,19 @@ const flybrarian = {
 			remainingGap.start.setMinutes(0);
 			remainingGap.start.setHours(remainingGap.start.getHours() + 1);
 		}
-
+		//fillers.push('hello world');
 		// mid hours
 		const remain = dateDiffMin(remainingGap.start, remainingGap.end);
 		const hourDec = remain / 60;
 		const hours = Math.floor(hourDec);
-		if (hourDec > hours) {
-			// TODO: ???
-		} 
+
+		// fill in gaps for number of hours
+		for (var i = 0; i < hours; i++) {
+			fillers.push(ev(null, null, new Date(remainingGap.start)));
+			remainingGap.start.setHours(remainingGap.start.getHours() + 1);
+		}
 
 		// if next starts on 30, we need to end at next-30, not next
-
 		// trailing 30 - ... need to start at the 0 hour
 		if (gap.next.start.getMinutes() == 30) {
 			gapStart = new Date(gap.next.start);
@@ -646,30 +648,45 @@ const flybrarian = {
 	}
 
 	// TODO: good opportunity for unit testing right here
-	function fillGapsInLineup(lineup) {
+	function fillGapsInLineup(lineup, sorter) {
 		const gaps = getGaps(lineup);
 
-		// insert into array *backwards* (so the index to insert into is ok)
-		var gap = null;
-		while (gap = gaps.pop()) {
-			// TODO: this should insert on the hour
-			const prevEvent = lineup[gap.startIndex - 1];
-			if (!prevEvent) debugger;
-			const prevTime = new Date(prevEvent.end);
-			insertItemsIntoArray(lineup, gap.startIndex, gap.hours, function (iter) {
-				const start = new Date(prevTime);
-				start.setHours(start.getHours() + iter);
-				return ev(null, null, start);
-			});		
-			
-			// Then insert a non-hour time
-			
-			insertItemsIntoArray(lineup, gap.startIndex, gap.remainderMinutes, function (iter) {
-				const start = new Date(prevTime);
-				start.setHours(start.getHours() + iter);
-				return ev(null, null, start);
-			});	
+		gaps.forEach(function (gap) {
+			const filler = getGapFiller(gap);
+			filler.forEach(function (fill) {
+				lineup.push(fill);
+			});
+		});
+
+		// now sort lineup
+		if (sorter) { 
+			lineup.sort(sorter);
 		}
+		else {
+			lineup.sort(sortEvents);
+		}
+
+		// // insert into array *backwards* (so the index to insert into is ok)
+		// var gap = null;
+		// while (gap = gaps.pop()) {
+		// 	// TODO: this should insert on the hour
+		// 	const prevEvent = lineup[gap.startIndex - 1];
+		// 	if (!prevEvent) debugger;
+		// 	const prevTime = new Date(prevEvent.end);
+		// 	insertItemsIntoArray(lineup, gap.startIndex, gap.hours, function (iter) {
+		// 		const start = new Date(prevTime);
+		// 		start.setHours(start.getHours() + iter);
+		// 		return ev(null, null, start);
+		// 	});		
+			
+		// 	// Then insert a non-hour time
+			
+		// 	insertItemsIntoArray(lineup, gap.startIndex, gap.remainderMinutes, function (iter) {
+		// 		const start = new Date(prevTime);
+		// 		start.setHours(start.getHours() + iter);
+		// 		return ev(null, null, start);
+		// 	});	
+		// }
 	}
 
 	// insert in place
@@ -883,7 +900,7 @@ const flybrarian = {
     root.app = {
         elements: {}
     };
-    console.log('document testing');    
+    // console.log('document testing');    
     
     if (typeof window === "undefined") {
         // we may not be in a browser
@@ -891,7 +908,7 @@ const flybrarian = {
         if (typeof window.document === "undefined") {
 
         } else {
-            console.log('document found');
+            // console.log('document found');
 
             document.addEventListener("DOMContentLoaded", function () {
                 // init controllers

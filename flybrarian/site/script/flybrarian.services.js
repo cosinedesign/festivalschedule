@@ -70,8 +70,8 @@
 	function getGapFiller(gap) {
 		const fillers = [];
 		const remainingGap = {
-			start: new Date(gap.start),
-			end: new Date(gap.end)
+			start: new Date(gap.prev.end),
+			end: new Date(gap.next.start)
 		};
 
 		var gapEnd = null,
@@ -88,27 +88,19 @@
 			remainingGap.start.setMinutes(0);
 			remainingGap.start.setHours(remainingGap.start.getHours() + 1);
 		}
-console.log('hello world');
+		//fillers.push('hello world');
 		// mid hours
 		const remain = dateDiffMin(remainingGap.start, remainingGap.end);
 		const hourDec = remain / 60;
 		const hours = Math.floor(hourDec);
-		if (hourDec > hours) {
-			
-			// fillers.push(ev(null, null, new Date(remainingGap.start)));
-				
-		} else {
-			// fill in gaps for number of hours
-			for (var i = 0; i < hours; i++) {
-				fillers.push(ev(null, null, new Date(remainingGap.start)));
-				remainingGap.start.setHours(remainingGap.start.getHours() + 1);
-			}
+
+		// fill in gaps for number of hours
+		for (var i = 0; i < hours; i++) {
+			fillers.push(ev(null, null, new Date(remainingGap.start)));
+			remainingGap.start.setHours(remainingGap.start.getHours() + 1);
 		}
 
-		fillers.push(ev(null, null, new Date(remainingGap.start)));
-		
 		// if next starts on 30, we need to end at next-30, not next
-
 		// trailing 30 - ... need to start at the 0 hour
 		if (gap.next.start.getMinutes() == 30) {
 			gapStart = new Date(gap.next.start);
@@ -121,30 +113,45 @@ console.log('hello world');
 	}
 
 	// TODO: good opportunity for unit testing right here
-	function fillGapsInLineup(lineup) {
+	function fillGapsInLineup(lineup, sorter) {
 		const gaps = getGaps(lineup);
 
-		// insert into array *backwards* (so the index to insert into is ok)
-		var gap = null;
-		while (gap = gaps.pop()) {
-			// TODO: this should insert on the hour
-			const prevEvent = lineup[gap.startIndex - 1];
-			if (!prevEvent) debugger;
-			const prevTime = new Date(prevEvent.end);
-			insertItemsIntoArray(lineup, gap.startIndex, gap.hours, function (iter) {
-				const start = new Date(prevTime);
-				start.setHours(start.getHours() + iter);
-				return ev(null, null, start);
-			});		
-			
-			// Then insert a non-hour time
-			
-			insertItemsIntoArray(lineup, gap.startIndex, gap.remainderMinutes, function (iter) {
-				const start = new Date(prevTime);
-				start.setHours(start.getHours() + iter);
-				return ev(null, null, start);
-			});	
+		gaps.forEach(function (gap) {
+			const filler = getGapFiller(gap);
+			filler.forEach(function (fill) {
+				lineup.push(fill);
+			});
+		});
+
+		// now sort lineup
+		if (sorter) { 
+			lineup.sort(sorter);
 		}
+		else {
+			lineup.sort(sortEvents);
+		}
+
+		// // insert into array *backwards* (so the index to insert into is ok)
+		// var gap = null;
+		// while (gap = gaps.pop()) {
+		// 	// TODO: this should insert on the hour
+		// 	const prevEvent = lineup[gap.startIndex - 1];
+		// 	if (!prevEvent) debugger;
+		// 	const prevTime = new Date(prevEvent.end);
+		// 	insertItemsIntoArray(lineup, gap.startIndex, gap.hours, function (iter) {
+		// 		const start = new Date(prevTime);
+		// 		start.setHours(start.getHours() + iter);
+		// 		return ev(null, null, start);
+		// 	});		
+			
+		// 	// Then insert a non-hour time
+			
+		// 	insertItemsIntoArray(lineup, gap.startIndex, gap.remainderMinutes, function (iter) {
+		// 		const start = new Date(prevTime);
+		// 		start.setHours(start.getHours() + iter);
+		// 		return ev(null, null, start);
+		// 	});	
+		// }
 	}
 
 	// insert in place
@@ -191,7 +198,7 @@ console.log('hello world');
 				const lineups = new Map();
 				
 				data.stages.forEach(function (camp) {
-					lineups.set(camp, camp.lineups[day]);
+					lineups.set(camp, camp.lineups.get(day));
 				});
 
 				return lineups;
@@ -265,14 +272,15 @@ console.log('hello world');
 					// first, sort the lineup by start
 					lineup.sort(sortEvents);
 					const firstEvent = lineup[0];
+					debugger;
 					// then, add empty events to the front
-					const padHours = firstEvent.getHours() - startHour;
+					const padHours = firstEvent.start.getHours() - startHour;
 
 					if (padHours) {
 						// add n hours to front of lineup
 						for (var i = 0; i < padHours; i++) {
 							const start = new Date(state.start);
-							lineup.unshift(ev(null, null, start.setHours(state.getHours() + i)));
+							lineup.unshift(ev(null, null, start.setHours(start.getHours() + i)));
 						}
 					}
 					// TODO: guarantee contiguous events
@@ -291,7 +299,7 @@ console.log('hello world');
 					start: null, 
 					end: null,
 					// Lineups by camp
-					lineups: new Map()					
+					lineups: paddedLineups				
 				};
 
 				return model;

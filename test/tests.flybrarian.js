@@ -116,56 +116,7 @@ test('One 30m leading gap in lineup found and filled', () => {
     	ev(null, null, new Date('December 17, 1995 04:00:00'))
 	];
 
-	console.log('hours ' + values[0].start.getHours());
-	
-	expect(values[0].start.getHours()).toBe(3);
-
-	const gaps = flybrarian.services.utils.getGaps(values);
-
-	expect(gaps).toBeDefined();
-	expect(gaps).not.toBeNull();
-	expect(gaps.length).toBe(1);
-
-	const filler = flybrarian.services.utils.getGapFiller(gaps[0]);
-
-	console.log(filler);
-
-	expect(filler.length).toBe(1);
-});
-
-test('One 1h and a 30m leading gap in lineup found and filled', () => {
-	
-	const values = [
-		ev(null, null, new Date('December 17, 1995 03:00:00'), new Date('December 17, 1995 03:30:00')), 
-    	ev(null, null, new Date('December 17, 1995 05:00:00'))
-	];
-
-	console.log('hours ' + values[0].start.getHours());
-	
-	expect(values[0].start.getHours()).toBe(3);
-
-	const gaps = flybrarian.services.utils.getGaps(values);
-
-	expect(gaps).toBeDefined();
-	expect(gaps).not.toBeNull();
-	expect(gaps.length).toBe(1);
-
-	const filler = flybrarian.services.utils.getGapFiller(gaps[0]);
-
-	console.log(filler);
-
-	expect(filler.length).toBe(2);
-});
-
-
-test('One 30m trailing gap in lineup found and filled', () => {
-	
-	const values = [
-		ev(null, null, new Date('December 17, 1995 03:00:00')), 
-    	ev(null, null, new Date('December 17, 1995 04:30:00'))
-	];
-
-	console.log('hours ' + values[0].start.getHours());
+	//console.log('hours ' + values[0].start.getHours());
 	
 	expect(values[0].start.getHours()).toBe(3);
 
@@ -178,6 +129,81 @@ test('One 30m trailing gap in lineup found and filled', () => {
 	const filler = flybrarian.services.utils.getGapFiller(gaps[0]);
 
 	//console.log(filler);
+
+	expect(filler.length).toBe(1);
+});
+
+test('One 1h and a 30m leading gap in lineup found and filled', () => {
+	
+	const values = [
+		ev(null, null, new Date('December 17, 1995 03:00:00'), new Date('December 17, 1995 03:30:00')), 
+    	ev(null, null, new Date('December 17, 1995 05:00:00'))
+	];
+
+	// console.log('hours ' + values[0].start.getHours());
+	
+	expect(values[0].start.getHours()).toBe(3);
+
+	const gaps = flybrarian.services.utils.getGaps(values);
+
+	expect(gaps).toBeDefined();
+	expect(gaps).not.toBeNull();
+	expect(gaps.length).toBe(1);
+
+	const filler = flybrarian.services.utils.getGapFiller(gaps[0]);
+
+	// console.log(filler);
+
+	expect(filler.length).toBe(2);
+});
+
+test('One 4h gap starting and ending on the 30m found and filled', () => {
+	
+	const values = [
+		ev(null, null, new Date('December 17, 1995 03:00:00'), new Date('December 17, 1995 03:30:00')), 
+    	ev(null, null, new Date('December 17, 1995 07:30:00'))
+	];
+
+	const gaps = flybrarian.services.utils.getGaps(values);
+
+	expect(gaps).toBeDefined();
+	expect(gaps).not.toBeNull();
+	expect(gaps.length).toBe(1);
+
+	const filler = flybrarian.services.utils.getGapFiller(gaps[0]);
+
+	console.log(filler);
+	expect(filler[0].start.getHours()).toBe(values[0].end.getHours());
+	expect(filler[0].start.getMinutes()).toBe(30);
+	expect(filler[0].end.getMinutes()).toBe(0);
+
+
+	expect(filler.length).toBe(5);
+});
+
+
+test('One 30m trailing gap in lineup found and filled', () => {
+	
+	const values = [
+		ev(null, null, new Date('December 17, 1995 03:00:00')), 
+    	ev(null, null, new Date('December 17, 1995 04:30:00'))
+	];
+
+	//console.log('hours ' + values[0].start.getHours());
+	
+	expect(values[0].start.getHours()).toBe(3);
+
+	const gaps = flybrarian.services.utils.getGaps(values);
+
+	expect(gaps).toBeDefined();
+	expect(gaps).not.toBeNull();
+	expect(gaps.length).toBe(1);
+
+	const filler = flybrarian.services.utils.getGapFiller(gaps[0]);
+
+	//console.log(filler);
+	expect(filler[0].start.getHours()).toBe(values[0].end.getHours());
+	expect(filler[0].start.getMinutes()).toBe(0);
 	expect(filler[0].end.getMinutes()).toBe(30);
 	expect(filler.length).toBe(1);
 });
@@ -212,21 +238,39 @@ test('One gap in lineup filled correctly', () => {
 	expect(testEvent.start.getHours()).toBe(values[0].end.getHours());
 });
 
-// test('One 30m (leading) gap in lineup filled correctly', () => {
-// 	const values = [
-// 		ev(null, null, new Date('December 17, 1995 03:00:00 GMT-0400'), new Date('December 17, 1995 03:30:00 GMT-0400')), 
-//     	ev(null, null, new Date('December 17, 1995 05:00:00 GMT-0400'))
-// 	];
+test('One 1hr 30m (leading) gap in lineup filled correctly', () => {
+	const values = [
+		ev(null, null, new Date('December 17, 1995 03:00:00 GMT-0400'), new Date('December 17, 1995 03:30:00 GMT-0400')), 
+    	ev(null, null, new Date('December 17, 1995 05:00:00 GMT-0400'))
+	];
 	
-// 	flybrarian.services.utils.fillGapsInLineup(values);
+	flybrarian.services.utils.fillGapsInLineup(values);
 	
-// 	const testEvent = values[1];
+	const testEvent = values[1];
 	
-// 	// console.log(values[0]);
-// 	// console.log(testEvent.start);
-// 	// console.log(testEvent.end);
-// 	expect(testEvent.start.getHours()).toBe(values[0].end.getHours());
-// });
+	expect(values.length).toBe(4);
+	expect(testEvent.start.getHours()).toBe(values[0].end.getHours());
+});
+
+test('Comprehensive event lineup test', () => {
+	const values = [
+		ev(null, null, new Date('December 17, 1995 03:00:00 GMT-0400'), new Date('December 17, 1995 03:30:00 GMT-0400')), // 1
+		ev(null, null, new Date('December 17, 1995 05:00:00 GMT-0400')), //4
+		ev(null, null, new Date('December 17, 1995 06:00:00 GMT-0400')), //5
+		ev(null, null, new Date('December 17, 1995 09:00:00 GMT-0400')), //9
+		ev(null, null, new Date('December 17, 1995 10:30:00 GMT-0400')),// 11
+		ev(null, null, new Date('December 17, 1995 13:30:00 GMT-0400')), //13 
+	];
+	
+	flybrarian.services.utils.fillGapsInLineup(values);
+	
+	const testEvent = values[1];
+	
+	// console.log(values);
+
+	expect(values.length).toBe(14);
+	expect(testEvent.start.getHours()).toBe(values[0].end.getHours());
+});
 
 // test('One 30m (trailing) gap in lineup filled correctly', () => {
 // 	const values = [

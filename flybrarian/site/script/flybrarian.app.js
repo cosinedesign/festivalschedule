@@ -5,7 +5,7 @@
     root.app = {
         elements: {}
     };
-    console.log('document testing');    
+    // console.log('document testing');    
     
     if (typeof window === "undefined") {
         // we may not be in a browser
@@ -13,7 +13,7 @@
         if (typeof window.document === "undefined") {
 
         } else {
-            console.log('document found');
+            // console.log('document found');
 
             document.addEventListener("DOMContentLoaded", function () {
                 // init controllers

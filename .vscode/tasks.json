@@ -13,7 +13,9 @@
         {
             "label": "Build Script",
             "command": "${workspaceRoot}\\gulp",
-            "args": ["build-release"],
+            "args": [
+                "build-release"
+            ],
             "options": {
                 "cwd": "${workspaceRoot}"
             }
@@ -21,11 +23,20 @@
         {
             "label": "Gulp Watch",
             "command": "${workspaceRoot}\\gulp",
-            "args": ["build-test-watch"],
+            "args": [
+                "build-test-watch"
+            ],
             "options": {
                 "cwd": "${workspaceRoot}"
             },
-            "runOptions": { "runOn": "folderOpen" }
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+        {
+            "type": "gulp",
+            "task": "build-test",
+            "problemMatcher": []
         }
     ]
 }

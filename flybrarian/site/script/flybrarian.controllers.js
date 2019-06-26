@@ -24,7 +24,7 @@
 
                 // TODO: find each day's start and end time
                 // TODO: then, fill in each camp's lineup with empty events up to their first
-                
+                debugger;
                 const model = services.lineups.byDay(5);
                 
                 const schedule = views.Schedule(model);

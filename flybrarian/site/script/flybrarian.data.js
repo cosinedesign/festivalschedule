@@ -102,6 +102,7 @@
 	// These are actually "stages" in model data
 	camps = {
 		"bac": c("Bring a Cup"),
+		"glutenFree": c("Gluten Free Halloween Camp"),
 		"lamp": c("Camp Lamp"),
 		"diode": c("diode"),		
 		"femmeDomme": c("Femme Dom Camp"),		
@@ -112,6 +113,10 @@
 	// dj, camp, day, start, end, description
 	// TODO: allow for multiple artists per event
 	const data = [
+		// gluten
+		//Wednesday, July 3rd from 6:30pm to 8:30pm at Gluten Free Halloween Camp:
+		//BLK WICCN BEATZ
+		ev(camps.glutenFree, null, d(days.wednes.day, 18, 30), d(days.wednes.day, 20, 30), "BLK WICCN BEATZ - hip hop, dark house, d&b, kumbía en español, bounce beatz, Taino tracks by Queer Black, Brown, and Idigen@s Peoples."),
 		// camp lamp
 		// diode
 		// strange maine
