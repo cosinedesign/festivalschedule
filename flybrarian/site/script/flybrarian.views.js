@@ -33,6 +33,7 @@
         },
         // List of days, with lineups per day
         Schedule: function (model) {
+            debugger;
              return View(model, 
                 function () {
                     //<div class="schedule day">
@@ -65,14 +66,27 @@
             return View(model, 
                 function () {
                     const els = {
-                        container: create('div', 'lineup')
+                        container: this.container = create('div', 'lineups')
                     };
                     
                     this.elements = els;
-                    return this.container = els.container;    
+
+                    return this.container;    
                 },
                 function () {
+                    const els = this.elements;
                     //iterate over items in lineup,
+                    if (model.lineups) {
+                        model.lineups.forEach(function (lineup, camp) {
+
+                            const lineupView = views.Lineup({
+                                lineup: lineup,
+                                camp: camp
+                            });
+                            els.container.appendChild(lineupView.mount());
+                            lineupView.render();
+                        });
+                    }
                 },
                 {}
             );
@@ -82,13 +96,44 @@
             return View(model, 
                 function () {
                     const els = {
-                        container: create('div', 'lineup')
+                        container: this.container = create('div', 'lineup'),
+                        header: create('div', 'header')
                     };
                     
+                    els.container.appendChild(els.header);
+
                     this.elements = els;    
+                    return this.container;
                 },
                 function () {
+                    const els = this.elements;
+                    
+                    els.header.innerText = model.camp.display;
+                    
                     // create timeboxes for 
+                    this.model.lineup.forEach(function (event) {
+                        // insert a 30 or 1hr event
+                        // TODO: need to support more than this time
+                        const timeslot = create('div', 'event');
+                        // TODO change class to hour / halfhour
+                        timeslot.classList.add('hour');
+                        if (event.artist) {
+                            if (event.artist && event.artist.constructor === Array) {
+                                var names = ''; 
+
+                                event.artist.forEach(function (artist) {
+                                    if (names) names += ', ';
+                                    names += artist.name;
+                                });
+
+                                timeslot.innerText = names;
+                            }
+                            else {
+                                timeslot.innerText = event.artist.name;
+                            }
+                        }
+                        els.container.appendChild(timeslot);
+                    });
                 },
                 {}
             );
