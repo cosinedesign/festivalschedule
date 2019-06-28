@@ -3,6 +3,21 @@
     const View = view.View,
         create = ui.create;
 
+    function getDuration(event) {
+        const duration = ((((event.end - event.start) / 1000) / 60) / 60);
+        const hours = Math.floor(duration);
+        const mins = duration - hours;
+        
+        const cssClass = 'hours' + hours + (mins ? '-30' : '');
+
+        return {
+            duration: duration,
+            hours: hours,
+            minutes: mins,
+            class: cssClass
+        };
+    }
+
 
     const views = {
         // List of all artists with events
@@ -33,7 +48,7 @@
         },
         // List of days, with lineups per day
         Schedule: function (model) {
-            debugger;
+            //debugger;
              return View(model, 
                 function () {
                     //<div class="schedule day">
@@ -115,8 +130,13 @@
                         // insert a 30 or 1hr event
                         // TODO: need to support more than this time
                         const timeslot = create('div', 'event');
+                        
                         // TODO change class to hour / halfhour
-                        timeslot.classList.add('hour');
+                        // find duration                        
+                        const duration = getDuration(event);
+
+                        timeslot.classList.add(duration.class);
+
                         if (event.artist) {
                             if (event.artist && event.artist.constructor === Array) {
                                 var names = ''; 
@@ -165,7 +185,6 @@
                         end.setHours(end.getHours() + 1);
                     }
                     // --------------------------------------
-                    debugger;
                     // const hourStart = start.getHours(),
                     //     hourEnd = end.getHours();
                     const hours = (24 - start.getHours()) + end.getHours();

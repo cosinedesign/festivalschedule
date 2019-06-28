@@ -71,3 +71,11 @@
 .threequarterhour {
 	height: 		$quarter-hour * 3;
 }
+
+@for $i from 1 through 8 {
+.hours#{$i} { height: #{$hour * $i}; }
+}
+
+@for $i from 1 through 4 {
+.hours#{$i}-30 { height: #{($hour * $i) + $half-hour}; }
+}
