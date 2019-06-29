@@ -37,6 +37,13 @@
             "type": "gulp",
             "task": "build-test",
             "problemMatcher": []
+        },
+        {
+            "type": "gulp",
+            "task": "build-release",
+            "problemMatcher": [
+                "$jshint"
+            ]
         }
     ]
 }

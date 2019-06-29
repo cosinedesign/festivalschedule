@@ -114,6 +114,13 @@
 
 	// TODO: good opportunity for unit testing right here
 	function fillGapsInLineup(lineup, sorter) {
+		if (sorter) { 
+			lineup.sort(sorter);
+		}
+		else {
+			lineup.sort(sortEvents);
+		}
+
 		const gaps = getGaps(lineup);
 
 		gaps.forEach(function (gap) {
@@ -197,9 +204,12 @@
 			byDay: function (day) {
 				const lineups = new Map();
 				
-				data.stages.forEach(function (camp) {
-					lineups.set(camp, camp.lineups.get(day));
+				data.stages.forEach(function (camp) {		
+					const lineup = camp.lineups.get(day);			
+					lineups.set(camp, lineup);
 				});
+
+				// then we need to sort & fill lineups
 
 				return lineups;
 			}
@@ -272,7 +282,7 @@
 					// first, sort the lineup by start
 					lineup.sort(sortEvents);
 					const firstEvent = lineup[0];
-					debugger;
+					
 					// then, add empty events to the front
 					const padHours = firstEvent.start.getHours() - startHour;
 
@@ -280,24 +290,25 @@
 						// add n hours to front of lineup
 						for (var i = 0; i < padHours; i++) {
 							const start = new Date(state.start);
-							lineup.unshift(ev(null, null, start.setHours(start.getHours() + i)));
+							start.setHours(start.getHours() + i);
+
+							lineup.unshift(ev(null, null, start));
 						}
 					}
-					// TODO: guarantee contiguous events
 
+					// guarantee contiguous events
+					fillGapsInLineup(lineup);
+					
 					// TODO: do we.. care about padding the end?
-
-
 				});
-
 
 				// should return 
 				// lineups
 				//	- each camp's daily lineup
 				// 	- copied and padded to the day
 				const model = {
-					start: null, 
-					end: null,
+					start: state.start, 
+					end: state.end,
 					// Lineups by camp
 					lineups: paddedLineups				
 				};

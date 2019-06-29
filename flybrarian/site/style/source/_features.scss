@@ -21,11 +21,21 @@
 }
 
 .timeslot {
+	max-height: $half-hour;
 	padding: 8px;
 	border: 1px solid #FFFF00;
 	font: bold 12px arial;
 	text-align: center;		
 	padding-top: 8px;
+	
+}
+
+.timeslot.next-day {
+	background-color: rgb(115, 173, 28);
+}
+
+.timeslot.hour {
+	max-height: $hour;
 }
 
 .lineups {
@@ -56,6 +66,10 @@
 	background-color:	#FFFF00;
 }
 
+.lineup .event.empty {
+	background-color:	#999900;
+}
+
 .hour {
 	height: 		$hour;
 }
@@ -76,6 +90,6 @@
 .hours#{$i} { height: #{$hour * $i}; }
 }
 
-@for $i from 1 through 4 {
+@for $i from 0 through 4 {
 .hours#{$i}-30 { height: #{($hour * $i) + $half-hour}; }
 }

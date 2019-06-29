@@ -47,3 +47,23 @@ $ui-large-wide:				"(min-width: $breakpoint-large-minWidth) and (max-width: $bre
 
 /* Small, Landscape ONLY */
 @media #{$ui-small-landscape} { }
+
+
+@media print {
+
+    body,
+    .schedule,
+    .timeslots,
+    .lineups,
+    .lineup .header,
+    .lineup .event
+    {
+        border-color:       black;
+        color: 				dimgrey; 
+        background-color: 	white;
+    }
+
+    .timeslot.next-day {
+        background-color: 	#CCCCCC;
+    }
+}

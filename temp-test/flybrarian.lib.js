@@ -142,6 +142,21 @@ const flybrarian = {
     const View = view.View,
         create = ui.create;
 
+    function getDuration(event) {
+        const duration = ((((event.end - event.start) / 1000) / 60) / 60);
+        const hours = Math.floor(duration);
+        const mins = duration - hours;
+        
+        const cssClass = 'hours' + hours + (mins ? '-30' : '');
+
+        return {
+            duration: duration,
+            hours: hours,
+            minutes: mins,
+            class: cssClass
+        };
+    }
+
 
     const views = {
         // List of all artists with events
@@ -172,16 +187,19 @@ const flybrarian = {
         },
         // List of days, with lineups per day
         Schedule: function (model) {
+            //debugger;
              return View(model, 
                 function () {
                     //<div class="schedule day">
                     
                     const els = {
                         container: this.container = create('div', 'schedule day'),
+                        header: create('div', 'header'),
                         timeline: this.timeline.mount(),
                         lineups: this.lineups.mount()
                     };
                     
+                    els.container.appendChild(els.header);
                     els.container.appendChild(els.timeline);
                     els.container.appendChild(els.lineups);
 
@@ -204,14 +222,27 @@ const flybrarian = {
             return View(model, 
                 function () {
                     const els = {
-                        container: create('div', 'lineup')
+                        container: this.container = create('div', 'lineups')
                     };
                     
                     this.elements = els;
-                    return this.container = els.container;    
+
+                    return this.container;    
                 },
                 function () {
+                    const els = this.elements;
                     //iterate over items in lineup,
+                    if (model.lineups) {
+                        model.lineups.forEach(function (lineup, camp) {
+
+                            const lineupView = views.Lineup({
+                                lineup: lineup,
+                                camp: camp
+                            });
+                            els.container.appendChild(lineupView.mount());
+                            lineupView.render();
+                        });
+                    }
                 },
                 {}
             );
@@ -221,13 +252,49 @@ const flybrarian = {
             return View(model, 
                 function () {
                     const els = {
-                        container: create('div', 'lineup')
+                        container: this.container = create('div', 'lineup'),
+                        header: create('div', 'header')
                     };
                     
+                    els.container.appendChild(els.header);
+
                     this.elements = els;    
+                    return this.container;
                 },
                 function () {
+                    const els = this.elements;
+                    
+                    els.header.innerText = model.camp.display;
+                    
                     // create timeboxes for 
+                    this.model.lineup.forEach(function (event) {
+                        // insert a 30 or 1hr event
+                        // TODO: need to support more than this time
+                        const timeslot = create('div', 'event');
+                        
+                        // TODO change class to hour / halfhour
+                        // find duration                        
+                        const duration = getDuration(event);
+
+                        timeslot.classList.add(duration.class);
+
+                        if (event.artist) {
+                            if (event.artist && event.artist.constructor === Array) {
+                                var names = ''; 
+
+                                event.artist.forEach(function (artist) {
+                                    if (names) names += ', ';
+                                    names += artist.name;
+                                });
+
+                                timeslot.innerText = names;
+                            }
+                            else {
+                                timeslot.innerText = event.artist.name;
+                            }
+                        }
+                        els.container.appendChild(timeslot);
+                    });
                 },
                 {}
             );
@@ -237,7 +304,8 @@ const flybrarian = {
                 function () {
                     const els = {
                         container: this.container = create('div', 'timeslots'),
-                        header: create('div', 'timeslot header')
+                        header: create('div', 'timeslot header'),
+                        footer: create('div', 'timeslot footer')
                     };
                                         
                     this.elements = els;    
@@ -247,10 +315,15 @@ const flybrarian = {
                     return this.container;
                 },
                 function () {
+                    
                     // TODO: Move all this data massaging to a data service class
                     // model.start - model.end
                     const start = new Date(model.start),
                         end = new Date(model.end);
+                    
+                    // TODO: get name of start day and insert into header
+                    this.elements.header.innerText = start.toLocaleDateString('default', {weekday: "short"});
+
 
                     if (start.getMinutes() > 0) start.setMinutes(0);
                     // this MUST make end time hour + 1
@@ -259,7 +332,6 @@ const flybrarian = {
                         end.setHours(end.getHours() + 1);
                     }
                     // --------------------------------------
-                    debugger;
                     // const hourStart = start.getHours(),
                     //     hourEnd = end.getHours();
                     const hours = (24 - start.getHours()) + end.getHours();
@@ -276,6 +348,11 @@ const flybrarian = {
                         this.container.appendChild(slot);
                         this.container.appendChild(slot30);
                     }
+
+                    // TODO: get name of end day and insert into footer
+                    this.container.appendChild(this.elements.footer);
+                    this.elements.footer.innerText = end.toLocaleDateString('default', {weekday: "short"});
+
                 },
                 {}
             );
@@ -393,6 +470,7 @@ const flybrarian = {
 	// These are actually "stages" in model data
 	camps = {
 		"bac": c("Bring a Cup"),
+		"glutenFree": c("Gluten Free Halloween Camp"),
 		"lamp": c("Camp Lamp"),
 		"diode": c("diode"),		
 		"femmeDomme": c("Femme Dom Camp"),		
@@ -403,6 +481,10 @@ const flybrarian = {
 	// dj, camp, day, start, end, description
 	// TODO: allow for multiple artists per event
 	const data = [
+		// gluten
+		//Wednesday, July 3rd from 6:30pm to 8:30pm at Gluten Free Halloween Camp:
+		//BLK WICCN BEATZ
+		ev(camps.glutenFree, null, d(days.wednes.day, 18, 30), d(days.wednes.day, 20, 30), "BLK WICCN BEATZ - hip hop, dark house, d&b, kumbía en español, bounce beatz, Taino tracks by Queer Black, Brown, and Idigen@s Peoples."),
 		// camp lamp
 		// diode
 		// strange maine
@@ -649,6 +731,13 @@ const flybrarian = {
 
 	// TODO: good opportunity for unit testing right here
 	function fillGapsInLineup(lineup, sorter) {
+		if (sorter) { 
+			lineup.sort(sorter);
+		}
+		else {
+			lineup.sort(sortEvents);
+		}
+
 		const gaps = getGaps(lineup);
 
 		gaps.forEach(function (gap) {
@@ -732,9 +821,12 @@ const flybrarian = {
 			byDay: function (day) {
 				const lineups = new Map();
 				
-				data.stages.forEach(function (camp) {
-					lineups.set(camp, camp.lineups[day]);
+				data.stages.forEach(function (camp) {		
+					const lineup = camp.lineups.get(day);			
+					lineups.set(camp, lineup);
 				});
+
+				// then we need to sort & fill lineups
 
 				return lineups;
 			}
@@ -807,18 +899,25 @@ const flybrarian = {
 					// first, sort the lineup by start
 					lineup.sort(sortEvents);
 					const firstEvent = lineup[0];
+					
 					// then, add empty events to the front
-					const padHours = firstEvent.getHours() - startHour;
+					const padHours = firstEvent.start.getHours() - startHour;
 
 					if (padHours) {
 						// add n hours to front of lineup
 						for (var i = 0; i < padHours; i++) {
 							const start = new Date(state.start);
-							lineup.unshift(ev(null, null, start.setHours(state.getHours() + i)));
+							start.setHours(start.getHours() + i);
+
+							lineup.unshift(ev(null, null, start));
 						}
 					}
-					// TODO: guarantee contiguous events
 
+					//lineup.sort(sortEvents);
+					//debugger;
+					// TODO: guarantee contiguous events
+					fillGapsInLineup(lineup);
+					debugger;
 					// TODO: do we.. care about padding the end?
 
 
@@ -833,7 +932,7 @@ const flybrarian = {
 					start: null, 
 					end: null,
 					// Lineups by camp
-					lineups: new Map()					
+					lineups: paddedLineups				
 				};
 
 				return model;
@@ -880,7 +979,7 @@ const flybrarian = {
                 // TODO: then, fill in each camp's lineup with empty events up to their first
                 
                 const model = services.lineups.byDay(5);
-                
+                debugger;
                 const schedule = views.Schedule(model);
                 state.app.elements.content.appendChild(schedule.mount());
                 schedule.render();

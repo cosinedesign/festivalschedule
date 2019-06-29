@@ -55,13 +55,16 @@
                     
                     const els = {
                         container: this.container = create('div', 'schedule day'),
+                        header: create('div', 'header'),
                         timeline: this.timeline.mount(),
+                        timelineRight: this.timelineRight.mount(),
                         lineups: this.lineups.mount()
                     };
                     
+                    els.container.appendChild(els.header);
                     els.container.appendChild(els.timeline);
                     els.container.appendChild(els.lineups);
-
+                    els.container.appendChild(els.timelineRight);
                     this.elements = els;    
                     
                     return this.container;
@@ -70,10 +73,12 @@
                 function () {
                     this.timeline.render();
                     this.lineups.render();
+                    this.timelineRight.render();
                 },
                 {
                     lineups: views.Lineups(model),
-                    timeline: views.Timeline(model)
+                    timeline: views.Timeline(model),
+                    timelineRight: views.Timeline(model)
                 }
             );
         },
@@ -138,6 +143,7 @@
                         timeslot.classList.add(duration.class);
 
                         if (event.artist) {
+                            
                             if (event.artist && event.artist.constructor === Array) {
                                 var names = ''; 
 
@@ -151,6 +157,9 @@
                             else {
                                 timeslot.innerText = event.artist.name;
                             }
+                        } else {
+                            // no artist listed; set class
+                            timeslot.classList.add('empty');
                         }
                         els.container.appendChild(timeslot);
                     });
@@ -163,7 +172,8 @@
                 function () {
                     const els = {
                         container: this.container = create('div', 'timeslots'),
-                        header: create('div', 'timeslot header')
+                        header: create('div', 'timeslot header'),
+                        footer: create('div', 'timeslot footer')
                     };
                                         
                     this.elements = els;    
@@ -173,10 +183,17 @@
                     return this.container;
                 },
                 function () {
+                    
                     // TODO: Move all this data massaging to a data service class
                     // model.start - model.end
                     const start = new Date(model.start),
                         end = new Date(model.end);
+                    
+                    const startDay = start.getDay();
+                    
+                    // TODO: get name of start day and insert into header
+                    this.elements.header.innerText = start.toLocaleDateString('default', {weekday: "short"});
+
 
                     if (start.getMinutes() > 0) start.setMinutes(0);
                     // this MUST make end time hour + 1
@@ -200,7 +217,18 @@
                         slot30.innerText = d.getHours() + ':30';
                         this.container.appendChild(slot);
                         this.container.appendChild(slot30);
+
+                        // Next day detection                    
+                        if (d.getDay() > startDay) {
+                            slot.classList.add('next-day');
+                            slot30.classList.add('next-day');
+                        }
                     }
+
+                    // TODO: get name of end day and insert into footer
+                    this.container.appendChild(this.elements.footer);
+                    this.elements.footer.innerText = end.toLocaleDateString('default', {weekday: "short"});
+
                 },
                 {}
             );

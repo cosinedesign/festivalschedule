@@ -272,6 +272,12 @@ test('Comprehensive event lineup test', () => {
 	expect(testEvent.start.getHours()).toBe(values[0].end.getHours());
 });
 
+test('Only want lineups for as late as the last event', () => {
+
+});
+
+// TODO: test an unsorted array of lineups into fillGapsInLineups.
+
 // test('One 30m (trailing) gap in lineup filled correctly', () => {
 // 	const values = [
 // 		ev(null, null, new Date('December 17, 1995 03:00:00 GMT-0400')), 

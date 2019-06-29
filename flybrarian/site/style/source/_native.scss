@@ -3,11 +3,16 @@ html, body {
 	box-sizing: border-box;
 }
 
-div {
-	box-sizing: inherit;
-}
-
 body {
 	color: 				$site-text; 
 	background-color: 	$site-background;
 }
+
+p.header {
+	font-size: 28px;
+}
+
+div {
+	box-sizing: inherit;
+}
+

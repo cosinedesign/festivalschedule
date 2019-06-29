@@ -20,7 +20,7 @@ const festival = {
 	// Library
 	festival.model = {			
 		// TODO: this should register the data into the same days, camps, events
-		event: function (stage, artist, start, end, description) {
+		event: function (stage, artist, start, end, name, description) {
 			// default to an hour
 			if (!end) { 
 				end = new Date(start);
@@ -34,6 +34,7 @@ const festival = {
 				stage: stage,		
 				start: start,
 				end: end,
+				name: name,
 				description: description
 			};
 
