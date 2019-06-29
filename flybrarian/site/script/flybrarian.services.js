@@ -216,6 +216,32 @@
 		}	
 	};
 
+	function getEventWindow(overlap) {
+	
+		return function (event) {
+			if (event.start >= overlap.end) return null;
+			if (event.end <= overlap.start) return null;
+
+			return event;
+		};
+	}
+
+	function fitEventWindow(overlap) {
+		debugger;
+		const filter = getEventWindow(overlap);
+
+		return function (event) {
+			event = filter(event);
+
+			if (!event) return;
+			const clone = Object.assign({}, event);
+			
+			if (clone.start < overlap.start) clone.start = new Date(overlap.start);
+			if (clone.end > overlap.end) clone.end = new Date(overlap.end);
+		
+			return clone;
+		}
+	}
 
 	const services = root.services = {
 		utils: {
@@ -223,10 +249,14 @@
 			dateDiffMin: dateDiffMin,
 			getGaps: getGaps,
 			getGapFiller: getGapFiller,
-			fillGapsInLineup: fillGapsInLineup
+			fillGapsInLineup: fillGapsInLineup,
+			getEventWindow: getEventWindow,
+			fitEventWindow: fitEventWindow
 		},
 		lineups: {
-			byDay: function (day) {
+			// options:
+			// - filter
+			byDay: function (day, options) {
 
 				const lineups = process.lineups.byDay(day);
 				
@@ -244,6 +274,13 @@
 						paddedLineups.set(camp, paddedLineup);
 
 						lineup.forEach(function (event, day) {
+							
+							if (options && options.filter) {								
+								event = options.filter(event);
+							}
+
+							if (!event) return; 
+
 							paddedLineup.push(event);
 						
 							// find earliest time of all the lineups
@@ -263,6 +300,9 @@
 					}
 				});
 
+				// Short-circuit when no start events satisfied
+				if (!state.start) return;
+
 				// Correct for half-hours
 				if (state.start.getMinutes()) {
 					state.start = new Date(state.start);
@@ -277,10 +317,11 @@
 				const startHour = state.start.getHours(),
 					endHour = state.end.getHours();
 				
-				// TODO: make new lineup array of events, each padded to earliest / lastest, and padded for gaps
+				// make new lineup array of events, filtered to a date start/end window, and padded to earliest / lastest, and padded for gaps
 				paddedLineups.forEach(function (lineup, camp) {
 					// first, sort the lineup by start
 					lineup.sort(sortEvents);
+
 					const firstEvent = lineup[0];
 					
 					// then, add empty events to the front

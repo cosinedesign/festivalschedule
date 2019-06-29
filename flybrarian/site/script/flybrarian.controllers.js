@@ -1,5 +1,8 @@
-(function (root, ui, views, services) {
+(function (root, ui, festival, views, services) {
     const state = {};
+
+    // alias 
+    const d = festival.date;
 
     root.controllers = {
         init: function (app) {
@@ -20,20 +23,29 @@
                 const content = state.app.elements.content;
                 //<P style="page-break-before: always"> 
                 for (var day = 3; day < 7; day++) {
-                    const model = services.lineups.byDay(day);                
-                    const dayHeader = content.appendChild(create('p', 'header'));
-                    dayHeader.style['page-break-before'] = 'always';
-                    dayHeader.innerText = model.start.toLocaleDateString('default', {
-                        weekday: "long",
-                        month: "long",
-                        day: "numeric"
-                    });
-                   
-                    const schedule = views.Schedule(model);                    
-                    content.appendChild(schedule.mount());
-                    schedule.render();
+                    // const model = services.lineups.byDay(day, { filter: services.utils.fitEventWindow({
+                    //     start: new Date('July 5, 2019 22:00:00'),
+		            //     end: new Date('July 6 2019 01:00:00')
+                    // }) });                
+                    const model = services.lineups.byDay(day);    
 
-                    content.appendChild(create('p', 'footer'));
+                    if (model && model.start) {
+                        const dayHeader = content.appendChild(create('p', 'header'));
+                        dayHeader.style['page-break-before'] = 'always';
+
+
+                        dayHeader.innerText = model.start.toLocaleDateString('default', {
+                            weekday: "long",
+                            month: "long",
+                            day: "numeric"
+                        });
+                    
+                        const schedule = views.Schedule(model);                    
+                        content.appendChild(schedule.mount());
+                        schedule.render();
+
+                        content.appendChild(create('p', 'footer'));
+                    }
                 }
 
 
@@ -53,6 +65,7 @@
 })(
     flybrarian, 
     cosinedesign.core.ui,
+    festival.model,
     flybrarian.views,
     flybrarian.services   
 );

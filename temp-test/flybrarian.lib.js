@@ -74,7 +74,7 @@ const festival = {
 	// Library
 	festival.model = {			
 		// TODO: this should register the data into the same days, camps, events
-		event: function (stage, artist, start, end, description) {
+		event: function (stage, artist, start, end, name, description) {
 			// default to an hour
 			if (!end) { 
 				end = new Date(start);
@@ -88,6 +88,7 @@ const festival = {
 				stage: stage,		
 				start: start,
 				end: end,
+				name: name,
 				description: description
 			};
 
@@ -196,13 +197,14 @@ const flybrarian = {
                         container: this.container = create('div', 'schedule day'),
                         header: create('div', 'header'),
                         timeline: this.timeline.mount(),
+                        timelineRight: this.timelineRight.mount(),
                         lineups: this.lineups.mount()
                     };
                     
                     els.container.appendChild(els.header);
                     els.container.appendChild(els.timeline);
                     els.container.appendChild(els.lineups);
-
+                    els.container.appendChild(els.timelineRight);
                     this.elements = els;    
                     
                     return this.container;
@@ -211,10 +213,12 @@ const flybrarian = {
                 function () {
                     this.timeline.render();
                     this.lineups.render();
+                    this.timelineRight.render();
                 },
                 {
                     lineups: views.Lineups(model),
-                    timeline: views.Timeline(model)
+                    timeline: views.Timeline(model),
+                    timelineRight: views.Timeline(model)
                 }
             );
         },
@@ -279,6 +283,7 @@ const flybrarian = {
                         timeslot.classList.add(duration.class);
 
                         if (event.artist) {
+                            
                             if (event.artist && event.artist.constructor === Array) {
                                 var names = ''; 
 
@@ -292,6 +297,9 @@ const flybrarian = {
                             else {
                                 timeslot.innerText = event.artist.name;
                             }
+                        } else {
+                            // no artist listed; set class
+                            timeslot.classList.add('empty');
                         }
                         els.container.appendChild(timeslot);
                     });
@@ -321,6 +329,8 @@ const flybrarian = {
                     const start = new Date(model.start),
                         end = new Date(model.end);
                     
+                    const startDay = start.getDay();
+                    
                     // TODO: get name of start day and insert into header
                     this.elements.header.innerText = start.toLocaleDateString('default', {weekday: "short"});
 
@@ -347,6 +357,12 @@ const flybrarian = {
                         slot30.innerText = d.getHours() + ':30';
                         this.container.appendChild(slot);
                         this.container.appendChild(slot30);
+
+                        // Next day detection                    
+                        if (d.getDay() > startDay) {
+                            slot.classList.add('next-day');
+                            slot30.classList.add('next-day');
+                        }
                     }
 
                     // TODO: get name of end day and insert into footer
@@ -444,7 +460,8 @@ const flybrarian = {
 		"Psylander": a("Psylander"),
 		"Saphire": a("Saphire", ["goth", "industrial", "downtempo"]),
 		"Sasquatch": a("Sasquatch"),
-		"soundShaman": a("Sound Shaman"),
+		"SmoKi": a("SmoKi"),
+		"soundShaman": a("Sound Shaman"),		
 		"TempoSuave": a("Tempo Suave"),
 		"Tigress": a("Tigress", [genres.bass, genres.world]),
 		"unknown": a("(UNKNOWN)", []),			
@@ -484,7 +501,7 @@ const flybrarian = {
 		// gluten
 		//Wednesday, July 3rd from 6:30pm to 8:30pm at Gluten Free Halloween Camp:
 		//BLK WICCN BEATZ
-		ev(camps.glutenFree, null, d(days.wednes.day, 18, 30), d(days.wednes.day, 20, 30), "BLK WICCN BEATZ - hip hop, dark house, d&b, kumbía en español, bounce beatz, Taino tracks by Queer Black, Brown, and Idigen@s Peoples."),
+		ev(camps.glutenFree, null, d(days.wednes.day, 18, 30), d(days.wednes.day, 20, 30), "BLK WICCN BEATZ", "hip hop, dark house, d&b, kumbía en español, bounce beatz, Taino tracks by Queer Black, Brown, and Idigen@s Peoples."),
 		// camp lamp
 		// diode
 		// strange maine
@@ -495,9 +512,10 @@ const flybrarian = {
 		ev(camps.femmeDomme, artists.cosinezero, d(days.sun.day, 1)),
 		
 		// Lions - wed
-		ev(camps.lions, artists.djSlothrower, d(days.wednes.day, 16)),
-		ev(camps.lions, artists.elementalFlux, d(days.wednes.day, 17)),
-		ev(camps.lions, artists.yourFurryFriend, d(days.wednes.day, 18)),
+		ev(camps.lions, [artists.djSlothrower, artists.fig], d(days.wednes.day, 14), d(days.wednes.day, 16), "Rawr a Cup ~ Bring a Lion"),
+		//ev(camps.lions, [artists.captainFuck], d(days.wednes.day, 16), d(days.wednes.day, 18), "Rawr a Cup ~ Bring a Lion"),
+		ev(camps.lions, artists.elementalFlux, d(days.wednes.day, 18)),
+		//ev(camps.lions, artists.yourFurryFriend, d(days.wednes.day, 18)),
 		ev(camps.lions, artists.lTrain, d(days.wednes.day, 19), d(days.wednes.day, 21)),
 		// Lions - thurs
 		ev(camps.lions, artists.epochalyptic, d(days.thurs.day, 15)),
@@ -519,7 +537,8 @@ const flybrarian = {
 		// Lions - fri
 		ev(camps.lions, artists.nateDef, d(days.fri.day, 15)),
 		ev(camps.lions, artists.omegaProtocol, d(days.fri.day, 16)),
-		ev(camps.lions, artists.fig, d(days.fri.day, 17)),
+		ev(camps.lions, artists.SmoKi, d(days.fri.day, 17)),
+
 		ev(camps.lions, artists.livingLight, d(days.fri.day, 23)),
 		ev(camps.lions, artists.acidBrunchClub, d(days.satur.day, 0)),
 		ev(camps.lions, artists.dontnormally, d(days.satur.day, 1)),
@@ -528,7 +547,7 @@ const flybrarian = {
 		ev(camps.lions, artists.Tigress, d(days.satur.day, 4)),
 		ev(camps.lions, artists.soundShaman, d(days.satur.day, 5), d(days.satur.day, 7)),
 		// Lions - sat
-		ev(camps.lions, artists.char, d(days.satur.day, 16, 30)),
+		ev(camps.lions, artists.char, d(days.satur.day, 16, 30), d(days.satur.day, 17, 30), "Queer Dance Party"),
 		ev(camps.lions, artists.leftCat, d(days.satur.day, 17, 30)),
 		ev(camps.lions, artists.keithMattar, d(days.satur.day, 18, 30)),
 		ev(camps.lions, artists.alexxxan, d(days.satur.day, 22)),
@@ -833,6 +852,16 @@ const flybrarian = {
 		}	
 	};
 
+	function getEventWindow(overlap) {
+	
+		return function (event) {
+			if (event.start > overlap.end) return false;
+			if (event.end < overlap.start) return false;
+
+			return true;
+		};
+	}
+
 
 	const services = root.services = {
 		utils: {
@@ -840,10 +869,14 @@ const flybrarian = {
 			dateDiffMin: dateDiffMin,
 			getGaps: getGaps,
 			getGapFiller: getGapFiller,
-			fillGapsInLineup: fillGapsInLineup
+			fillGapsInLineup: fillGapsInLineup,
+			getEventWindow: getEventWindow
 		},
 		lineups: {
-			byDay: function (day) {
+			// options:
+			// - start 
+			// - end
+			byDay: function (day, options) {
 
 				const lineups = process.lineups.byDay(day);
 				
@@ -861,6 +894,8 @@ const flybrarian = {
 						paddedLineups.set(camp, paddedLineup);
 
 						lineup.forEach(function (event, day) {
+							// if (event)
+
 							paddedLineup.push(event);
 						
 							// find earliest time of all the lineups
@@ -894,10 +929,12 @@ const flybrarian = {
 				const startHour = state.start.getHours(),
 					endHour = state.end.getHours();
 				
-				// TODO: make new lineup array of events, each padded to earliest / lastest, and padded for gaps
+				// make new lineup array of events, filtered to a date start/end window, and padded to earliest / lastest, and padded for gaps
 				paddedLineups.forEach(function (lineup, camp) {
 					// first, sort the lineup by start
 					lineup.sort(sortEvents);
+
+
 					const firstEvent = lineup[0];
 					
 					// then, add empty events to the front
@@ -913,24 +950,19 @@ const flybrarian = {
 						}
 					}
 
-					//lineup.sort(sortEvents);
-					//debugger;
-					// TODO: guarantee contiguous events
+					// guarantee contiguous events
 					fillGapsInLineup(lineup);
-					debugger;
+					
 					// TODO: do we.. care about padding the end?
-
-
 				});
-
 
 				// should return 
 				// lineups
 				//	- each camp's daily lineup
 				// 	- copied and padded to the day
 				const model = {
-					start: null, 
-					end: null,
+					start: state.start, 
+					end: state.end,
 					// Lineups by camp
 					lineups: paddedLineups				
 				};
@@ -951,20 +983,20 @@ const flybrarian = {
 	flybrarian.data, 
 	festival.model
 );
-(function (root, views, services) {
+(function (root, ui, festival, views, services) {
     const state = {};
 
-    
+    // alias 
+    const d = festival.date;
+
     root.controllers = {
         init: function (app) {
             state.app = app;
         },
         home: {
             main: function () {
-                
-                //console.log(flybrarian.camps.lamp);
+                const create = ui.create;
 
-                
                 //console.log(lineup);
                 // TODO: 
                 //debugger;
@@ -973,24 +1005,47 @@ const flybrarian = {
                 // const timeline = views.Timeline({});
                 // state.app.elements.content.appendChild(timeline.mount());
                 // timeline.render();
-                
+                const content = state.app.elements.content;
+                //<P style="page-break-before: always"> 
+                for (var day = 3; day < 7; day++) {
+                    const model = services.lineups.byDay(day);                
+                    const dayHeader = content.appendChild(create('p', 'header'));
+                    dayHeader.style['page-break-before'] = 'always';
+                    dayHeader.innerText = model.start.toLocaleDateString('default', {
+                        weekday: "long",
+                        month: "long",
+                        day: "numeric"
+                    });
+
+
+                   
+                    const schedule = views.Schedule(model);                    
+                    content.appendChild(schedule.mount());
+                    schedule.render();
+
+                    content.appendChild(create('p', 'footer'));
+                }
+
 
                 // TODO: find each day's start and end time
                 // TODO: then, fill in each camp's lineup with empty events up to their first
                 
-                const model = services.lineups.byDay(5);
-                debugger;
-                const schedule = views.Schedule(model);
-                state.app.elements.content.appendChild(schedule.mount());
-                schedule.render();
-            }
+
+            },
+            fomoVision: function () {
+                // TODO: show me what's happening in the next 4 hours
+
+            },
+            camp: function () {}
         }
     };
 
 })(
     flybrarian, 
+    cosinedesign.core.ui,
+    festival.model,
     flybrarian.views,
-    flybrarian.services
+    flybrarian.services   
 );
 
 

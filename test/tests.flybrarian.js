@@ -172,7 +172,7 @@ test('One 4h gap starting and ending on the 30m found and filled', () => {
 
 	const filler = flybrarian.services.utils.getGapFiller(gaps[0]);
 
-	console.log(filler);
+	// console.log(filler);
 	expect(filler[0].start.getHours()).toBe(values[0].end.getHours());
 	expect(filler[0].start.getMinutes()).toBe(30);
 	expect(filler[0].end.getMinutes()).toBe(0);
@@ -272,7 +272,27 @@ test('Comprehensive event lineup test', () => {
 	expect(testEvent.start.getHours()).toBe(values[0].end.getHours());
 });
 
-test('Only want lineups for as late as the last event', () => {
+test('Get events overlapping a window', () => {
+	const values = [
+		ev(null, null, new Date('December 17, 1995 03:00:00'), new Date('December 17, 1995 03:30:00')), // 1
+		ev(null, null, new Date('December 17, 1995 05:00:00')), //6
+		ev(null, null, new Date('December 17, 1995 06:00:00')), //6
+		ev(null, null, new Date('December 17, 1995 09:00:00')), //10
+		ev(null, null, new Date('December 17, 1995 10:30:00')),// 11
+		ev(null, null, new Date('December 17, 1995 13:30:00')) //14:30 
+	];
+	
+	const overlap = { 
+		start: new Date('December 17, 1995 07:00:00'),
+		end: new Date('December 17, 1995 11:00:00')
+	};
+
+	const results = values.filter(flybrarian.services.utils.getEventWindow(overlap));
+
+	console.log(overlap);
+	console.log(results);
+
+	expect(results.length).toBe(3);
 
 });
 
