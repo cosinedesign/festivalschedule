@@ -24,6 +24,7 @@
 			bass: "bass",
 			breaks: "breaks",
 			dnb: "drumnbass",
+			electroswing: "electroswing",
 			goth: "goth",	
 			hiphop: "hiphop",
 			house: "house",
@@ -48,17 +49,19 @@
 		"ArcRunner": a("ArcRunner", ["goth", "industrial"]),	
 		"captainFuck": a("Captain Fuck"),
 		"char": a("CHAR"),
-		"cosinezero": a("cosinezero", [genres.bass, genres.breaks, "dnb", "triphop"]),
+		"cosinezero": a("cosinezero", [genres.bass, genres.breaks, genres.dnb, "triphop"]),
 		"cromafor": a("Cromafor"),
-		"dabu": a("beeBu", [genres.bass, genres.breaks, "dnb"]),
+		"dabu": a("dabu", [genres.bass, genres.breaks, genres.dnb, genres.triphop]),
 		"damianPaul": a("Damian Paul", [genres.techno]),
+		"dekichan": a("dekichan", [genres.electroswing]),
+		"dessa": a("Nightshade", [genres.dnb]),
 		"djSlothrower": a("DJ SlothThrower"),
 		"dontnormally": a("dontnormally", [genres.techno, genres.bass]),
-		"Drift":a("Drift"),
+		"Drift": a("Drift"),
 		"elementalFlux": a("Elemental Flux"),
 		"epochalyptic": a("Epochalyptic"),
-		"fig": a("FiG", ["dnb", genres.breaks]),
-		"fox": a("Fox", ["dnb", "hiphop"]),
+		"fig": a("FiG", [genres.dnb, genres.breaks]),
+		"fox": a("Fox", [genres.dnb, "hiphop"]),
 		"garyCarlow": a("Gary Carlow", [genres.techno, "house"]),
 		"JazzCabbage": a("Jazz Cabbage"),
 		"journeyWeaver": a("Journey Weaver"),
@@ -79,6 +82,7 @@
 		"SmoKi": a("SmoKi"),
 		"soundShaman": a("Sound Shaman"),		
 		"TempoSuave": a("Tempo Suave"),
+		"Ticho": a("Rob Ticho"),
 		"Tigress": a("Tigress", [genres.bass, genres.world]),
 		"unknown": a("(UNKNOWN)", []),			
 		"vinylBlight": a("Vinyl Blight", [genres.bass]),
@@ -99,13 +103,14 @@
 		"AWC": a("AWC"),
 		"dJR": a("D:[JR]"),
 		"ShwillyB": a("Shwilly B"),
+		"unknown": a(" - ")
 	},
 	// These are actually "stages" in model data
 	camps = {
 		"bac": c("Bring a Cup"),
 		"glutenFree": c("Gluten Free Halloween Camp"),
 		"lamp": c("Camp Lamp"),
-		"diode": c("diode"),		
+		"diode": c("Diode"),		
 		"femmeDomme": c("Femme Dom Camp"),		
 		"lions": c("Lovin' Lions"),
 		"strangeMaine": c("Strange Maine")	
@@ -117,7 +122,7 @@
 		// gluten
 		//Wednesday, July 3rd from 6:30pm to 8:30pm at Gluten Free Halloween Camp:
 		//BLK WICCN BEATZ
-		ev(camps.glutenFree, null, d(days.wednes.day, 18, 30), d(days.wednes.day, 20, 30), "BLK WICCN BEATZ", "hip hop, dark house, d&b, kumbía en español, bounce beatz, Taino tracks by Queer Black, Brown, and Idigen@s Peoples."),
+		ev(camps.glutenFree, artists.unknown, d(days.wednes.day, 18, 30), d(days.wednes.day, 20, 30), "BLK WICCN BEATZ", "hip hop, dark house, d&b, kumbía en español, bounce beatz, Taino tracks by Queer Black, Brown, and Idigen@s Peoples."),
 		// camp lamp
 		// diode
 		// strange maine
@@ -125,7 +130,7 @@
 		ev(camps.strangeMaine, artists.Saphire, d(days.fri.day, 21), d(days.satur.day, 1)),
 		
 		// Unsorted / known sets...
-		ev(camps.femmeDomme, artists.cosinezero, d(days.sun.day, 1)),
+		//ev(camps.femmeDomme, artists.cosinezero, d(days.sun.day, 1)),
 		
 		// Lions - wed
 		ev(camps.lions, [artists.djSlothrower, artists.fig], d(days.wednes.day, 14), d(days.wednes.day, 16), "Rawr a Cup ~ Bring a Lion"),
@@ -213,7 +218,34 @@
 		ev(camps.lamp, artists.livingLight, d(days.sun.day, 1)),
 		ev(camps.lamp, artists.keithMattar, d(days.sun.day, 2)),
 		ev(camps.lamp, artists.Psylander, d(days.sun.day, 3)),
-		ev(camps.lamp, artists.garyCarlow, d(days.sun.day, 4), d(days.sun.day, 6))
+		ev(camps.lamp, artists.garyCarlow, d(days.sun.day, 4), d(days.sun.day, 6)),
+
+		// Diode - thursday 
+		ev(camps.diode, artists.journeyWeaver, d(days.thurs.day, 13), d(days.thurs.day, 15), "Ecstatic Dance"),
+		ev(camps.diode, artists.garyCarlow, d(days.thurs.day, 16), d(days.thurs.day, 18), "Disco Party"),
+		ev(camps.diode, artists.char, d(days.thurs.day, 18), d(days.thurs.day, 20)),
+		ev(camps.diode, artists.omegaProtocol, d(days.thurs.day, 20)),
+		ev(camps.diode, artists.oleg, d(days.thurs.day, 21)),
+		ev(camps.diode, artists.dessa, d(days.thurs.day, 22)),
+		ev(camps.diode, artists.dekichan, d(days.thurs.day, 23)),
+		ev(camps.diode, artists.livingLight, d(days.fri.day, 0), d(days.fri.day, 1, 30)),
+		ev(camps.diode, artists.fig, d(days.fri.day, 1, 30), d(days.fri.day, 3)),
+		ev(camps.diode, artists.fox, d(days.fri.day, 3)),
+		ev(camps.diode, artists.vinylBlight, d(days.fri.day, 4)),
+		// Diode - friday 
+		ev(camps.diode, artists.Ticho, d(days.fri.day, 15), d(days.fri.day, 17), "Mx Firefly"),
+		ev(camps.diode, artists.Ticho, d(days.fri.day, 17), d(days.fri.day, 18), "Mx Firefly Afterparty"),
+		ev(camps.diode, artists.dekichan, d(days.fri.day, 18), d(days.fri.day, 19), "Mx Firefly Afterparty"),
+		ev(camps.diode, artists.damianPaul, d(days.satur.day, 0), d(days.satur.day, 1, 30)),
+		ev(camps.diode, [artists.keithMattar, artists.garyCarlow], d(days.satur.day, 1, 30), d(days.satur.day, 5)),
+		
+		// Diode - saturday
+		ev(camps.diode, artists.unknown, d(days.satur.day, 14), d(days.satur.day, 16), "Contra Dance"),
+		ev(camps.diode, artists.dabu, d(days.satur.day, 16)),
+		ev(camps.diode, artists.ShwillyB, d(days.satur.day, 23), d(days.sun.day, 0, 30)),
+		ev(camps.diode, artists.megadipites, d(days.sun.day, 0, 30), d(days.sun.day, 1, 30)),
+		ev(camps.diode, artists.EddyVanRaven, d(days.sun.day, 1, 30), d(days.sun.day, 3, 30)),
+		ev(camps.diode, artists.dabu, d(days.sun.day, 3, 30), d(days.sun.day, 5)),
 	];
 
 	// Turn camps object into map

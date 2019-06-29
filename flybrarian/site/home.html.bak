@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style/style.css" />    
+		<meta name="theme-color" content="#4285f4">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	</head>
+	<body>
+		<script type="text/javascript" src="script/site.js"></script>
+		<div id="output"></div>
+		<div class="layout dev">
+			<div id="menu" class="left menu panel dev">
+			
+			</div>
+			<div id="content" class="content panel dev">
+				<div class="schedule dev">
+					<div class="timeslots">
+						
+					</div>
+					<div class="lineup dev">
+					
+					</div>
+					<div class="lineup dev">
+					
+					</div>
+				</div>
+			</div>
+		</div>	
+	
+	</body>
+</html>

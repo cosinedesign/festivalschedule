@@ -1,4 +1,10 @@
 
+#content {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .schedule {
 	display: 			flex;
 	flex-direction: 	columns;
@@ -14,6 +20,15 @@
 	height: 30px;
 }
 
+.event-name {
+	font-weight: bold;
+}
+span.event-name {
+	display: block;
+}
+.event-desc {
+	font-size: $font-size-small;
+}
 
 .timeslots {
 	width: 60px;
@@ -52,9 +67,9 @@
 }
 
 .lineup {
-	min-width: 100px;
-	max-width: 200px;
-	width: 200px;
+	min-width: 200px;
+	max-width: 300px;
+	/* width: 200px; */
 }
 
 .lineup .event {
@@ -64,6 +79,8 @@
 	
 	border: 			1px solid #ADFF2F;
 	background-color:	#FFFF00;
+
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .lineup .event.empty {

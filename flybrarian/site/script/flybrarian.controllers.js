@@ -28,11 +28,10 @@
 		            //     end: new Date('July 6 2019 01:00:00')
                     // }) });                
                     const model = services.lineups.byDay(day);    
-
+                    
                     if (model && model.start) {
                         const dayHeader = content.appendChild(create('p', 'header'));
                         dayHeader.style['page-break-before'] = 'always';
-
 
                         dayHeader.innerText = model.start.toLocaleDateString('default', {
                             weekday: "long",

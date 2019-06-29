@@ -143,7 +143,13 @@
                         timeslot.classList.add(duration.class);
 
                         if (event.artist) {
-                            
+                            if (event.name) {
+                                const nameNode = create('span', 'event-name');
+                                nameNode.innerText = event.name;
+                                timeslot.appendChild(nameNode);
+                            }
+
+                            const artistNode = create('span', 'artist-name');
                             if (event.artist && event.artist.constructor === Array) {
                                 var names = ''; 
 
@@ -151,17 +157,26 @@
                                     if (names) names += ', ';
                                     names += artist.name;
                                 });
-
-                                timeslot.innerText = names;
+                                
+                                artistNode.innerText = names;
                             }
                             else {
-                                timeslot.innerText = event.artist.name;
+                                artistNode.innerText = event.artist.name;
+                            }
+                            timeslot.appendChild(artistNode);
+                            
+                            if (event.description) {
+                                const descNode = create('span', 'event-desc');
+                                descNode.innerText = event.description;
+                                timeslot.appendChild(descNode);
                             }
                         } else {
                             // no artist listed; set class
                             timeslot.classList.add('empty');
                         }
                         els.container.appendChild(timeslot);
+
+                        
                     });
                 },
                 {}
@@ -183,13 +198,14 @@
                     return this.container;
                 },
                 function () {
-                    
+                    debugger;
                     // TODO: Move all this data massaging to a data service class
                     // model.start - model.end
                     const start = new Date(model.start),
                         end = new Date(model.end);
                     
-                    const startDay = start.getDay();
+                    const startDay = start.getDay(),
+                        endDay = end.getDay();
                     
                     // TODO: get name of start day and insert into header
                     this.elements.header.innerText = start.toLocaleDateString('default', {weekday: "short"});
@@ -203,8 +219,11 @@
                     }
                     // --------------------------------------
                     // const hourStart = start.getHours(),
-                    //     hourEnd = end.getHours();
-                    const hours = (24 - start.getHours()) + end.getHours();
+                    // //     hourEnd = end.getHours();
+                    // const preMidnightHours = (24 - start.getHours());
+                    // const postMidnightHours = (startDay == endDay) ? (24 - end.getHours()) : end.getHours();
+                    //const hours = preMidnightHours + postMidnightHours;
+                    const hours = (end - start) / 1000 / 60 / 60;
 
                     // create timeboxes
                     for (var i = 0; i < hours; i++) {

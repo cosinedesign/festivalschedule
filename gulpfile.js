@@ -35,7 +35,8 @@ gulp.task('build-test-watch', function () {
 });
 
 gulp.task('copy-assets', function () {
-	return gulp.src(['flybrarian/site/home.html'])
+	return gulp.src(['flybrarian/site/index.htm',
+		'flybrarian/site/sw.js'])
 		.pipe(gulp.dest('flybrarian/dist'));
 });
 
