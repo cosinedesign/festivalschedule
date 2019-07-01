@@ -192,6 +192,10 @@ $ui-large-wide:				"(min-width: $breakpoint-large-minWidth) and (max-width: $bre
         background-color: 	white;
     }
 
+    .lineups {
+        flex-shrink: 1;
+    }
+
     .lineup .header,
     .lineup .event 
     {
