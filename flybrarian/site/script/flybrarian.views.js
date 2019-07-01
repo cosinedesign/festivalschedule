@@ -158,10 +158,10 @@
                                     names += artist.name;
                                 });
                                 
-                                artistNode.innerText = names;
+                                artistNode.innerText = names + '  ';
                             }
                             else {
-                                artistNode.innerText = event.artist.name;
+                                artistNode.innerText = event.artist.name + '  ';
                             }
                             timeslot.appendChild(artistNode);
                             

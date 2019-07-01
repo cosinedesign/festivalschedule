@@ -35,9 +35,13 @@ gulp.task('build-test-watch', function () {
 });
 
 gulp.task('copy-assets', function () {
-	return gulp.src(['flybrarian/site/index.htm',
+	gulp.src(['flybrarian/site/index.htm',
 		'flybrarian/site/sw.js'])
 		.pipe(gulp.dest('flybrarian/dist'));
+
+	return gulp.src(['flybrarian/site/style/assets/Flybrarian-Header.gif',
+		'flybrarian/site/style/assets/Flybrarian-Header-print.gif'])
+		.pipe(gulp.dest('flybrarian/dist/style/assets'));
 });
 
 gulp.task('build-fly-sass', function () {

@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 		<title>the 2019 FLYBRARIAN</title>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="style/style.css" />    
 		<meta name="theme-color" content="#4285f4">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta property="og:url"                content="https://www.fireflyartscollective.org/flybrarian" />
+		<meta property="og:type"               content="website" />
+		<meta property="og:title"              content="The 2019 FLYBRARIAN" />
+		<meta property="og:description"        content="The definitive Who What Where for Firefly dancefloor enthusiasts!" />
+		<meta property="og:image"              content="https://www.fireflyartscollective.org/flybrarian/style/assets/Flybrarian-Header.gif" />
 	</head>
 	<body>
 		<script type="text/javascript" src="script/site.js"></script>
+		<div id="header"><img class="normal" src="style/assets/Flybrarian-Header.gif"><img class="print" src="style/assets/Flybrarian-Header-print.gif"></div>
 		<div id="output"></div>
 		<div class="layout dev">
 			<div id="menu" class="left menu panel dev">
@@ -33,7 +39,7 @@
 		<script>
 			if ('serviceWorker' in navigator) {
 				window.addEventListener('load', function () {
-					navigator.serviceWorker.register('/sw.js')
+					navigator.serviceWorker.register('./sw.js')
 						.then(function (registration) {
 							console.info('ServiceWorker registration successful with scope: ', registration.scope);
 

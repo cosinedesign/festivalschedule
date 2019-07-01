@@ -1,13 +1,16 @@
 
+#header {
+	text-align: center;
+}
 #content {
 	display: flex;
     flex-direction: column;
-    align-items: center;
+	align-items: center;
+	break-inside: auto;
 }
 
 .schedule {
 	display: 			flex;
-	flex-direction: 	columns;
 	color: 				$feature-text;
 }
 
@@ -17,7 +20,7 @@
 }
 
 .schedule .header {
-	height: 30px;
+	height: 			$half-hour;
 }
 
 .event-name {
@@ -32,13 +35,16 @@ span.event-name {
 
 .timeslots {
 	width: 60px;
-	background-color: #ADFF2F;
+	background-color: $yellowgreen;
+	flex-grow: 0;
+	flex-shrink: 1;
 }
 
 .timeslot {
-	max-height: $half-hour;
+	max-height: 	$half-hour;
+	height: 		$half-hour;
 	padding: 8px;
-	border: 1px solid #FFFF00;
+	border: 1px solid $yellow;
 	font: bold 12px arial;
 	text-align: center;		
 	padding-top: 8px;
@@ -46,7 +52,7 @@ span.event-name {
 }
 
 .timeslot.next-day {
-	background-color: rgb(115, 173, 28);
+	background-color: $next-day;
 }
 
 .timeslot.hour {
@@ -56,19 +62,21 @@ span.event-name {
 .lineups {
 	max-width: 100%;
 	display: flex;
+	flex-grow: 1;
+	flex-shrink: 0;
 	overflow-x: auto;
-	background-color: #ADFF2F;
+	background-color:	$yellowgreen;
 }
 
 .lineup .header { 
 	padding: 6px;
-	border: 1px solid #FFFF00;
+	border: 1px solid 	$yellow;
 	font-weight: bold;	
 }
 
 .lineup {
-	min-width: 200px;
-	max-width: 300px;
+	min-width: 150px;
+	max-width: 250px;
 	/* width: 200px; */
 }
 
@@ -77,14 +85,14 @@ span.event-name {
 	
 	padding: 6px;
 	
-	border: 			1px solid #ADFF2F;
-	background-color:	#FFFF00;
+	border: 			1px solid $yellowgreen;
+	background-color:	$yellow;
 
 	font-family: Arial, Helvetica, sans-serif;
 }
 
 .lineup .event.empty {
-	background-color:	#999900;
+	background-color:	$empty-time;
 }
 
 .hour {
@@ -110,3 +118,4 @@ span.event-name {
 @for $i from 0 through 4 {
 .hours#{$i}-30 { height: #{($hour * $i) + $half-hour}; }
 }
+

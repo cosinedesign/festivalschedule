@@ -43,12 +43,14 @@
 		days = festival.config.days;
 
 	const artists = {
+		"ama": a("AMA"),
 		"acidBrunchClub": a("Acid Brunch Club"),
 		"alexxxan": a("AlexXxan", [genres.techno]),
 		"andreaMarks": a("Andrea Marks", [genres.techno]),
 		"ArcRunner": a("ArcRunner", ["goth", "industrial"]),	
 		"captainFuck": a("Captain Fuck"),
-		"char": a("CHAR"),
+		"char": a("char7"),
+		"chuck": a("Chuck Chuck"),
 		"cosinezero": a("cosinezero", [genres.bass, genres.breaks, genres.dnb, "triphop"]),
 		"cromafor": a("Cromafor"),
 		"dabu": a("dabu", [genres.bass, genres.breaks, genres.dnb, genres.triphop]),
@@ -60,11 +62,14 @@
 		"Drift": a("Drift"),
 		"elementalFlux": a("Elemental Flux"),
 		"epochalyptic": a("Epochalyptic"),
+		"FaitAccompli": a("Fait Accompli"),
 		"fig": a("FiG", [genres.dnb, genres.breaks]),
 		"fox": a("Fox", [genres.dnb, "hiphop"]),
 		"garyCarlow": a("Gary Carlow", [genres.techno, "house"]),
+		"gav": a("DJ Gav"),
 		"JazzCabbage": a("Jazz Cabbage"),
 		"journeyWeaver": a("Journey Weaver"),
+		"kibbles": a("Kibbles & Beats"),
 		"leftCat": a("Left Cat"),
 		"livingLight": a("Living Light"),
 		"lTrain": a("L-Train", [genres.bass, genres.triphop]),
@@ -79,6 +84,7 @@
 		"Psylander": a("Psylander"),
 		"Saphire": a("Saphire", ["goth", "industrial", "downtempo"]),
 		"Sasquatch": a("Sasquatch"),
+		"Scrams": a("Scrams"),
 		"SmoKi": a("SmoKi"),
 		"soundShaman": a("Sound Shaman"),		
 		"TempoSuave": a("Tempo Suave"),
@@ -108,10 +114,10 @@
 	// These are actually "stages" in model data
 	camps = {
 		"bac": c("Bring a Cup"),
-		"glutenFree": c("Gluten Free Halloween Camp"),
+		"glutenFree": c("Gluten Free Halloween"),
 		"lamp": c("Camp Lamp"),
 		"diode": c("Diode"),		
-		"femmeDomme": c("Femme Dom Camp"),		
+		"femmeDomme": c("Femme Dom"),		
 		"lions": c("Lovin' Lions"),
 		"strangeMaine": c("Strange Maine")	
 	};
@@ -122,18 +128,56 @@
 		// gluten
 		//Wednesday, July 3rd from 6:30pm to 8:30pm at Gluten Free Halloween Camp:
 		//BLK WICCN BEATZ
-		ev(camps.glutenFree, artists.unknown, d(days.wednes.day, 18, 30), d(days.wednes.day, 20, 30), "BLK WICCN BEATZ", "hip hop, dark house, d&b, kumbía en español, bounce beatz, Taino tracks by Queer Black, Brown, and Idigen@s Peoples."),
+		ev(camps.glutenFree, artists.gav, d(days.wednes.day, 18, 30), d(days.wednes.day, 20, 30), "BLK WICCN BEATZ", "hip hop, dark house, d&b, kumbía en español, bounce beatz, Taino tracks by Queer Black, Brown, and Idigen@s Peoples."),
 		// camp lamp
 		// diode
 		// strange maine
-		ev(camps.strangeMaine, [artists.ArcRunner, artists.Saphire], d(days.thurs.day, 21), d(days.fri.day, 1)),
-		ev(camps.strangeMaine, artists.Saphire, d(days.fri.day, 21), d(days.satur.day, 1)),
+		ev(camps.strangeMaine, [artists.ArcRunner, artists.Saphire], d(days.thurs.day, 21), d(days.fri.day, 1), "Shi*Wrecked, Under The Sea", "Wash ashore! Come visit the dark depths that live near the lighthouse for Strange Maine's annual Thursday night gathering. Dance to Goth/Industrial and all things Dark, meet some Mainers and hang out in the Lighthouse. Guest bartenders Nicole Aucoin and Aster will be slinging some hand picked cocktails just for you. Alcoholic and Non alcoholic drinks will be available."),
+		ev(camps.strangeMaine, artists.Saphire, d(days.satur.day, 21), d(days.sun.day, 1), "Slow & Sexy Dance Party" ,"Heed the siren call! We slow down the BPM so you can make your move, inspired by Ceremony's 'Down With Tempo'. Featuring DJ Saphire and our guest bartender: the lovely Talena (Bring A Cup) will be pouring alcoholic and non alcoholic drinks."),
 		
+		/*
+			Friday Night
+		11p - 12a	ArcRunner
+		12a - 1a	Saphire
+		1a - 2a	AlexXxan	
+		2a - 3a	dontnormally
+		
+		- Saturday - 
+		
+		Beats & Beats & Beets
+		
+		4p - 5p	Scrams
+		5p - 7p	AMA & Fait Accompli
+		
+		Stay Raunchy
+		
+		FDC in their final form for FireFly 2019 - A night dedicated to all things booty. Clever Liquids In Trees speakeasy & Open Dungeon with Monitor Approval. DJ info available at camp.
+		
+		9p - 10p	------
+		10p - 11p  Char
+		11p - 12a	Dekichan
+		12a - 1a  	Kibbles & Beats
+		1a - 2a	[cosinezero]
+		2a - 3a. 	Vinyl Blight
+		*/
+
 		// Unsorted / known sets...
-		//ev(camps.femmeDomme, artists.cosinezero, d(days.sun.day, 1)),
+		ev(camps.femmeDomme, artists.ArcRunner, d(days.fri.day, 23)),
+		ev(camps.femmeDomme, artists.Saphire, d(days.satur.day, 0)),
+		ev(camps.femmeDomme, artists.alexxxan, d(days.satur.day, 1)),
+		ev(camps.femmeDomme, artists.dontnormally, d(days.satur.day, 2)),
+		
+		ev(camps.femmeDomme, artists.scrams, d(days.satur.day, 16)),
+		ev(camps.femmeDomme, [artists.ama, artists.FaitAccompli], d(days.satur.day, 17), d(days.satur.day, 19)),
+		
+		ev(camps.femmeDomme, artists.char, d(days.satur.day, 22)),
+		ev(camps.femmeDomme, artists.dekichan, d(days.satur.day, 23)),
+		ev(camps.femmeDomme, artists.kibbles, d(days.sun.day, 0)),
+		ev(camps.femmeDomme, artists.cosinezero, d(days.sun.day, 1)),
+		ev(camps.femmeDomme, artists.vinylBlight, d(days.sun.day, 2)),
 		
 		// Lions - wed
-		ev(camps.lions, [artists.djSlothrower, artists.fig], d(days.wednes.day, 14), d(days.wednes.day, 16), "Rawr a Cup ~ Bring a Lion"),
+		ev(camps.lions, [artists.djSlothrower, artists.fig], d(days.wednes.day, 14), d(days.wednes.day, 16), "Rawr a Cup ~ Bring a Lion", "Bring a Cup takes over the Lions."),
 		//ev(camps.lions, [artists.captainFuck], d(days.wednes.day, 16), d(days.wednes.day, 18), "Rawr a Cup ~ Bring a Lion"),
 		ev(camps.lions, artists.elementalFlux, d(days.wednes.day, 18)),
 		//ev(camps.lions, artists.yourFurryFriend, d(days.wednes.day, 18)),
@@ -246,6 +290,16 @@
 		ev(camps.diode, artists.megadipites, d(days.sun.day, 0, 30), d(days.sun.day, 1, 30)),
 		ev(camps.diode, artists.EddyVanRaven, d(days.sun.day, 1, 30), d(days.sun.day, 3, 30)),
 		ev(camps.diode, artists.dabu, d(days.sun.day, 3, 30), d(days.sun.day, 5)),
+
+		// Wed 4-6 Guest DJs from Lions spin ???.
+		// Thurs 4-6 L-Train spins party music. Thurs 8-9 live music jam session 9-10 moar live music. Fri 4-6 Chuck Chuck spins Prince. Sat 4-6 Chuck Chuck spins party funk & breaks 7-9 Chuck spins hip hop & soul
+		ev(camps.bac, artists.captainFuck, d(days.wednes.day, 16), d(days.wednes.day, 18),  "Rawr a Cup ~ Bring a Lion", "The Lions take over Bring a Cup."),
+		ev(camps.bac, artists.lTrain, d(days.thurs.day, 16), d(days.thurs.day, 18),  "Party Music"),
+		ev(camps.bac, artists.unknown, d(days.thurs.day, 20), d(days.thurs.day, 21),  "Live Music Jam Session"),
+		ev(camps.bac, artists.unknown, d(days.thurs.day, 21), d(days.thurs.day, 22),  "Moar Live Music"),
+		ev(camps.bac, artists.chuck, d(days.fri.day, 16), d(days.fri.day, 18),  "Chuck Chuck spins us some Prince"),
+		ev(camps.bac, artists.chuck, d(days.satur.day, 16), d(days.satur.day, 18),  "Chuck Chuck spins us some party funk & breaks"),
+		ev(camps.bac, artists.chuck, d(days.satur.day, 19), d(days.satur.day, 21),  "Chuck Chuck spins us some hiphop & soul"),
 	];
 
 	// Turn camps object into map

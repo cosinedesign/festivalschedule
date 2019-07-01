@@ -186,8 +186,8 @@
 		});
 	});
 
-	const daysLineup = schedules[5];
-	console.log(daysLineup);
+	//const daysLineup = schedules[5];
+	//console.log(daysLineup);
 
 	// const model = {
 	// 	start: daysLineup[0].start,

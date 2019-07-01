@@ -31,7 +31,6 @@
                     
                     if (model && model.start) {
                         const dayHeader = content.appendChild(create('p', 'header'));
-                        dayHeader.style['page-break-before'] = 'always';
 
                         dayHeader.innerText = model.start.toLocaleDateString('default', {
                             weekday: "long",
@@ -44,6 +43,7 @@
                         schedule.render();
 
                         content.appendChild(create('p', 'footer'));
+                        content.appendChild(create('div', 'page-break-after'));                        
                     }
                 }
 

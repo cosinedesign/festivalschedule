@@ -1,9 +1,11 @@
 
 $darkgreen:				#116611;
+$altgreen:              rgb(115, 173, 28);
 $midgreen:				#66CC66;
 $green:					#00FF00;
 $yellowgreen: 			#ADFF2F;
 $yellow: 				#FFFF00;
+$dimyellow:             #AAAA00;
 
 /* grayscales */
 $deepgray: 				#1F1F1F;
@@ -22,8 +24,14 @@ $site-text:				$yellowgreen;
 
 $feature-text:			$darkgreen;
 
+$empty-time:            $dimyellow;
+$next-day:              $altgreen;
 
 /* Sizing */
 $quarter-hour:			15px;
 $half-hour:				$quarter-hour * 2;
 $hour:					$half-hour * 2;
+
+$quarter-hour-print:	12px;
+$half-hour-print:       $quarter-hour-print * 2;
+$hour-print:            $half-hour-print * 2;

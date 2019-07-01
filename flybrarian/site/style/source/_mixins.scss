@@ -37,3 +37,10 @@
 .centered {
     text-align: center;
 }
+
+@media print {
+    .page-break {
+        page-break-before: always;
+        break-before: left;
+    }
+}

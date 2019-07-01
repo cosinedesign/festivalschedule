@@ -1,8 +1,8 @@
-const CACHE_NAME = 'fly-cache-v1';
+const CACHE_NAME = 'fly-cache-v3';
 const urlsToCache = [
-    '/index.htm',
-    '/style/style.css',
-    '/script/site.js'
+    './index.htm',
+    './style/style.css',
+    './script/site.js'
 ];
 
 self.addEventListener('install', event => {
@@ -13,6 +13,9 @@ self.addEventListener('install', event => {
             // add files to cache
             .then(cache => cache.addAll(urlsToCache))
             .then(() => self.skipWaiting())
+            .catch(function (error) {
+                console.error(error);
+            })
     );
 });
 
@@ -20,16 +23,20 @@ self.addEventListener('activate', event => {
     // console.info('activate event detected');
 
     event.waitUntil(
-        caches.keys().then(keyList => {
-            return Promise.all(keyList.map(key => {
-                if (key !== CACHE_NAME) {
-                    // remove old cache
-                    console.log('removing old cache', key);
+        caches.keys()
+            .then(keyList => {
+                return Promise.all(keyList.map(key => {
+                    if (key !== CACHE_NAME) {
+                        // remove old cache
+                        console.log('removing old cache', key);
 
-                    return caches.delete(key);
-                }
-            }));
-        })
+                        return caches.delete(key);
+                    }
+                }));
+            })
+            .catch(function (error) {
+                console.error(error);
+            })
     );
 });
 
