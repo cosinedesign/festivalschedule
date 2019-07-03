@@ -2,6 +2,7 @@ const
 	del = require('del'),
 	gulp = require('gulp'),
 	concat = require('gulp-concat'),
+	terser = require('gulp-terser'),
 	sass = require('gulp-sass');//,
 	//uglify = require('gulp-uglify');
 
@@ -40,7 +41,9 @@ gulp.task('copy-assets', function () {
 		.pipe(gulp.dest('flybrarian/dist'));
 
 	return gulp.src(['flybrarian/site/style/assets/Flybrarian-Header.gif',
-		'flybrarian/site/style/assets/Flybrarian-Header-print.gif'])
+		'flybrarian/site/style/assets/Flybrarian-Header-print.gif',
+		'flybrarian/site/style/assets/Flybrarian-Header-FOMO.gif',
+		'flybrarian/site/style/assets/icon-highres.png'])
 		.pipe(gulp.dest('flybrarian/dist/style/assets'));
 });
 
@@ -55,7 +58,11 @@ gulp.task('build-fly', function(){
 	console.log('running build script');
 
     return gulp.src(config.script.fly_src)        
-		.pipe(concat(config.script.output))		
+		.pipe(concat(config.script.output))	
+		.pipe(terser({
+			keep_fnames: true,
+			mangle: false
+		}))		
         .pipe(gulp.dest('flybrarian/dist/script'));
 });
 
@@ -75,7 +82,11 @@ gulp.task('build-fly-test', function () {
 	console.log(test_scripts);
 
     return gulp.src(test_scripts)        
-		.pipe(concat(config.script.test_output))		
+		.pipe(concat(config.script.test_output))	
+		.pipe(terser({
+			keep_fnames: true,
+			mangle: false
+		  }))	
         .pipe(gulp.dest('temp-test'));
 });
 

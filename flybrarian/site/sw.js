@@ -1,8 +1,12 @@
-const CACHE_NAME = 'fly-cache-v3';
+const CACHE_NAME = 'fly-cache-v14';
 const urlsToCache = [
-    './index.htm',
-    './style/style.css',
-    './script/site.js'
+    '/flybrarian/index.htm',
+    '/flybrarian/style/style.css',
+    '/flybrarian/script/site.js',    
+    '/flybrarian/style/assets/Flybrarian-Header.gif',
+    '/flybrarian/style/assets/Flybrarian-Header-print.gif',
+    '/flybrarian/style/assets/Flybrarian-Header-FOMO.gif',
+    '/flybrarian/style/assets/icon-highres.png'
 ];
 
 self.addEventListener('install', event => {
@@ -14,7 +18,7 @@ self.addEventListener('install', event => {
             .then(cache => cache.addAll(urlsToCache))
             .then(() => self.skipWaiting())
             .catch(function (error) {
-                console.error(error);
+                console.log(error);
             })
     );
 });
@@ -35,20 +39,35 @@ self.addEventListener('activate', event => {
                 }));
             })
             .catch(function (error) {
-                console.error(error);
+                console.log(error);
             })
     );
 });
 
-self.addEventListener('fetch', event => {
-    // console.info('fetch event detected');
+// self.addEventListener('fetch', event => {
+//     // console.info('fetch event detected');
 
+//     event.respondWith(
+//         // try to fetch over the network
+//         fetch(event.request)
+//             .catch(() => {
+//                 // network request failed; serve from cache instead
+//                 return caches.match(event.request);
+//             })
+//     );
+// });
+
+self.addEventListener('fetch', function(event) {
     event.respondWith(
-        // try to fetch over the network
-        fetch(event.request)
-            .catch(() => {
-                // network request failed; serve from cache instead
-                return caches.match(event.request);
-            })
+      caches.match(event.request).then(function(response) {
+        return response || fetch(event.request);
+      })
+      .catch(function(err) {
+        // If both fail, show a generic fallback:
+        return caches.match('/flybrarian/index.htm');
+        // However, in reality you'd have many different
+        // fallbacks, depending on URL & headers.
+        // Eg, a fallback silhouette image for avatars.
+      })
     );
-});
+  });

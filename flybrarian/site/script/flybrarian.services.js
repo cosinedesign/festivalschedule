@@ -227,7 +227,7 @@
 	}
 
 	function fitEventWindow(overlap) {
-		debugger;
+		// debugger;
 		const filter = getEventWindow(overlap);
 
 		return function (event) {
@@ -244,6 +244,7 @@
 	}
 
 	const services = root.services = {
+		_test: process.lineups.byDay,
 		utils: {
 			sortEvents: sortEvents,
 			dateDiffMin: dateDiffMin,
@@ -265,22 +266,27 @@
 					end: null
 				};
 
+
+				const filter = (options && options.start) ? services.utils.fitEventWindow(options) : null; 
+
 				const paddedLineups = new Map();
 
 				lineups.forEach(function (lineup, camp) {
 					// In a map, a value could be null for a given key, so we must test for value to exist
 					if (lineup) {
 						const paddedLineup = [];
-						paddedLineups.set(camp, paddedLineup);
+						var hasEvents = false;
 
 						lineup.forEach(function (event, day) {
 							
-							if (options && options.filter) {								
-								event = options.filter(event);
+							if (options && filter) {								
+								event = filter(event);
 							}
 
 							if (!event) return; 
 
+							hasEvents = true;
+							
 							paddedLineup.push(event);
 						
 							// find earliest time of all the lineups
@@ -297,6 +303,8 @@
 								state.end = event.end;
 							}
 						});
+
+						if (hasEvents) paddedLineups.set(camp, paddedLineup);
 					}
 				});
 
@@ -323,23 +331,37 @@
 					lineup.sort(sortEvents);
 
 					const firstEvent = lineup[0];
-					
-					// then, add empty events to the front
-					const padHours = firstEvent.start.getHours() - startHour;
+					if (firstEvent) {
+						
+						// then, add empty events to the front
+						const padHours = firstEvent.start.getHours() - startHour;
 
-					if (padHours) {
-						// add n hours to front of lineup
-						for (var i = 0; i < padHours; i++) {
-							const start = new Date(state.start);
-							start.setHours(start.getHours() + i);
 
-							lineup.unshift(ev(null, null, start));
+
+						if (padHours) {
+							// add n hours to front of lineup
+							for (var i = 0; i < padHours; i++) {
+								const start = new Date(state.start);
+
+								if ((i == 0) && options && options.start && (options.start.getMinutes() == 30)) {
+										// don't pad a full hour if you only need the 30, ya moran
+										const endFirst = new Date(start);
+										start.setMinutes(30);		
+										endFirst.setMinutes(0);
+										endFirst.setHours(endFirst.getHours() + 1);										
+										lineup.unshift(ev(null, null, start, endFirst));
+								} else {
+									start.setHours(start.getHours() + i);	
+									lineup.unshift(ev(null, null, start));
+								}								
+
+								
+							}
 						}
-					}
-
-					// guarantee contiguous events
-					fillGapsInLineup(lineup);
 					
+						// guarantee contiguous events
+						fillGapsInLineup(lineup);
+					}
 					// TODO: do we.. care about padding the end?
 				});
 
@@ -348,8 +370,8 @@
 				//	- each camp's daily lineup
 				// 	- copied and padded to the day
 				const model = {
-					start: state.start, 
-					end: state.end,
+					start: (options && options.start) ? options.start : state.start, 
+					end: (options && options.end) ? options.end : state.end,
 					// Lineups by camp
 					lineups: paddedLineups				
 				};

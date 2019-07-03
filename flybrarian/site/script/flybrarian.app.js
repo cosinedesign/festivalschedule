@@ -21,7 +21,13 @@
 
                 root.controllers.init(root.app);
 
-                root.controllers.home.main();
+                try {
+                    root.controllers.home.fomoVision();
+                }
+                catch (ex) {
+                    root.controllers.home.main();
+                    
+                }
 
             });
         }

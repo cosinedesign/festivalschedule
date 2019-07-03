@@ -2,7 +2,8 @@
 const flybrarian = require('flybrarian.lib');
 
 // alias functions
-const ev = flybrarian.festival.model.event;
+const ev = flybrarian.festival.model.event,
+	d =  flybrarian.festival.model.date;
 
 // example test data
 const testValues = [
@@ -296,6 +297,25 @@ test('Get events overlapping a window', () => {
 
 });
 
+
+test('Sunday events', function () {
+	// TODO: you MUST uncomment const today = new Date(Date.now());            
+	const today = d(7, 0);
+	const endTime = new Date(today);
+	const day = today.getDay();
+
+	endTime.setHours(endTime.getHours() + 3);
+	
+	const model = flybrarian.services.lineups.byDay(day, { filter: flybrarian.services.utils.fitEventWindow({
+			start: today,
+			end: endTime
+		}) 
+	});        
+	expect(model).toBeDefined();
+	console.log(model);
+	expect(model).not.toBeNull();
+
+});
 // TODO: test an unsorted array of lineups into fillGapsInLineups.
 
 // test('One 30m (trailing) gap in lineup filled correctly', () => {

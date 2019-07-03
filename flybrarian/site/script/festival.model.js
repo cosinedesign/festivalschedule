@@ -12,7 +12,12 @@ const festival = {
 			fri: { description: "Bug Burn", day: 5},
 			satur: { description: "Temple Burn", day: 6 },
 			sun: { description: "Exodus/GTFO", day: 7}
-		}
+		},
+		FOMO_HOURS: 3,
+		FOMO_REFRESH: 120000, // refresh every two minutes
+		FOMO_TEST_DAY: null,
+		FOMO_TEST_HOUR: null,
+		FOMO_TEST_MINUTES: null
 	}
 };
 

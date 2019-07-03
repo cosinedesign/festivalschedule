@@ -198,25 +198,28 @@
                     return this.container;
                 },
                 function () {
-                    debugger;
+                    // debugger;
                     // TODO: Move all this data massaging to a data service class
                     // model.start - model.end
                     const start = new Date(model.start),
                         end = new Date(model.end);
                     
                     const startDay = start.getDay(),
-                        endDay = end.getDay();
+                        startMin = start.getMinutes(),
+                        endDay = end.getDay(),
+                        endMin = end.getMinutes();
                     
                     // TODO: get name of start day and insert into header
                     this.elements.header.innerText = start.toLocaleDateString('default', {weekday: "short"});
 
 
-                    if (start.getMinutes() > 0) start.setMinutes(0);
+                    //if (start.getMinutes() > 0) start.setMinutes(0);
+
                     // this MUST make end time hour + 1
-                    if (end.getMinutes() > 0) {
-                        end.setMinutes(0);
-                        end.setHours(end.getHours() + 1);
-                    }
+                    // if (end.getMinutes() > 0) {
+                    //     end.setMinutes(0);
+                    //     end.setHours(end.getHours() + 1);
+                    // }
                     // --------------------------------------
                     // const hourStart = start.getHours(),
                     // //     hourEnd = end.getHours();
@@ -228,19 +231,29 @@
                     // create timeboxes
                     for (var i = 0; i < hours; i++) {
                         const slot = create('div', 'timeslot'),
-                            slot30 = create('div', 'timeslot');
+                            slot30 = create('div', 'timeslot'),
+                            slotLast = create('div', 'timeslot');
 
                         const d = new Date(start);
                         d.setHours(d.getHours() + i);
                         slot.innerText = d.getHours() + ':00';
                         slot30.innerText = d.getHours() + ':30';
-                        this.container.appendChild(slot);
+
+                        if (!(i == 0 && startMin == 30)) this.container.appendChild(slot);                                                 
                         this.container.appendChild(slot30);
+
+                        // add final hour if we need it
+                        if (i == (hours - 1) && endMin == 30) {
+                            d.setHours(d.getHours() + 1);
+                            slotLast.innerText = d.getHours() + ':00';
+                            this.container.appendChild(slotLast);
+                        }
 
                         // Next day detection                    
                         if (d.getDay() > startDay) {
                             slot.classList.add('next-day');
                             slot30.classList.add('next-day');
+                            slotLast.classList.add('next-day');
                         }
                     }
 

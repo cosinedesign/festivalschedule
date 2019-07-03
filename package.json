@@ -7,6 +7,7 @@
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^4.0.2",
+    "gulp-terser": "^1.2.0",
     "jest": "^24.8.0",
     "node-sass": "^4.12.0"
   },

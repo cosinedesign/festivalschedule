@@ -9,9 +9,49 @@
 	break-inside: auto;
 }
 
+body #header img.fomo {
+	display: none;
+}
+
+body.fomo #header img.fomo {
+	display: block;
+	width: 100vw;
+}
+
+body.fomo #header img.normal {
+	display: none;
+}
+
+body.fomo .timeslots {
+	background-color: 	inherit;
+}
+
+body.fomo .lineups {
+	background-color: 	inherit;
+}
+
+body.fomo .lineup .event {
+	background-color:	$event-time-FOMO;
+}
+
+body.fomo .lineup .event.empty {
+	background-color: 	inherit;
+	border: 			1px solid $darkgray;
+}
+
 .schedule {
 	display: 			flex;
 	color: 				$feature-text;
+}
+
+body.fomo .schedule {
+	color: 				$feature-text-FOMO;
+	overflow-y:			scroll;
+}
+
+p.fomo-text 	{
+	margin: 			2px;
+	text-align:			center;
 }
 
 .header {
@@ -35,7 +75,7 @@ span.event-name {
 
 .timeslots {
 	width: 60px;
-	background-color: $yellowgreen;
+	background-color: $timeslot;
 	flex-grow: 0;
 	flex-shrink: 1;
 }
@@ -65,6 +105,7 @@ span.event-name {
 	flex-grow: 1;
 	flex-shrink: 0;
 	overflow-x: auto;
+	overflow-y: hidden;
 	background-color:	$yellowgreen;
 }
 
@@ -90,6 +131,7 @@ span.event-name {
 
 	font-family: Arial, Helvetica, sans-serif;
 }
+
 
 .lineup .event.empty {
 	background-color:	$empty-time;

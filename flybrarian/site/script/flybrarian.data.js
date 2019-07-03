@@ -132,7 +132,7 @@
 		// camp lamp
 		// diode
 		// strange maine
-		ev(camps.strangeMaine, [artists.ArcRunner, artists.Saphire], d(days.thurs.day, 21), d(days.fri.day, 1), "Shi*Wrecked, Under The Sea", "Wash ashore! Come visit the dark depths that live near the lighthouse for Strange Maine's annual Thursday night gathering. Dance to Goth/Industrial and all things Dark, meet some Mainers and hang out in the Lighthouse. Guest bartenders Nicole Aucoin and Aster will be slinging some hand picked cocktails just for you. Alcoholic and Non alcoholic drinks will be available."),
+		ev(camps.strangeMaine, [artists.ArcRunner, artists.Saphire], d(days.thurs.day, 21), d(days.fri.day, 1), "Shi*Wrecked, Under The Sea", "Wash ashore! Come visit the dark depths that live near the lighthouse for Strange Maine's annual Thursday night gathering. Dance to Goth/Industrial and all things Dark, meet some Mainers and hang out in the Lighthouse. Alcoholic and Non alcoholic drinks will be available."),
 		ev(camps.strangeMaine, artists.Saphire, d(days.satur.day, 21), d(days.sun.day, 1), "Slow & Sexy Dance Party" ,"Heed the siren call! We slow down the BPM so you can make your move, inspired by Ceremony's 'Down With Tempo'. Featuring DJ Saphire and our guest bartender: the lovely Talena (Bring A Cup) will be pouring alcoholic and non alcoholic drinks."),
 		
 		/*

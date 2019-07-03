@@ -76,12 +76,20 @@ $ui-large-wide:				"(min-width: $breakpoint-large-minWidth) and (max-width: $bre
         font-family: arial, helvetica, sans-serif;
     }
 
+    body.fomo img.normal {
+        display: none;
+    }
+
     #content {
         align-items: normal;
     }
 
     #header img.normal {
         width: 100vw;
+    }
+
+    .layout {
+        overflow: auto;
     }
 
     .schedule {
