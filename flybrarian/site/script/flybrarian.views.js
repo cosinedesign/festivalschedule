@@ -3,11 +3,11 @@
     const View = view.View,
         create = ui.create;
 
-    function getDuration(event) {
+    function getDuration(event) {        
         const duration = ((((event.end - event.start) / 1000) / 60) / 60);
-        const hours = Math.floor(duration);
-        const mins = duration - hours;
-        
+        const hours = Math.floor(duration + .2); // stupid fucking javascript
+        var mins = duration - hours;
+
         const cssClass = 'hours' + hours + (mins ? '-30' : '');
 
         return {

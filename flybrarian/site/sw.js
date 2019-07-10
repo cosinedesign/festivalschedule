@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fly-cache-v14';
+const CACHE_NAME = 'fly-cache-v16';
 const urlsToCache = [
     '/flybrarian/index.htm',
     '/flybrarian/style/style.css',
@@ -71,3 +71,17 @@ self.addEventListener('fetch', function(event) {
       })
     );
   });
+
+//   self.addEventListener('fetch', function(event) {
+//     event.respondWith(
+//       fetch(event.request).catch(function() {
+//         return caches.match(event.request).catch(function(err) {
+//             // If both fail, show a generic fallback:
+//             return caches.match('/flybrarian/index.htm');
+//             // However, in reality you'd have many different
+//             // fallbacks, depending on URL & headers.
+//             // Eg, a fallback silhouette image for avatars.
+//           })        
+//       })
+//     );
+//   });

@@ -1,4 +1,5 @@
 (function (root, ui, festival, views, services) {
+    debugger;
     const state = {},
         FOMO_LENGTH_HOURS = festival.config.FOMO_HOURS || 3,
         FOMO_REFRESH = festival.config.FOMO_REFRESH; // 20 seconds

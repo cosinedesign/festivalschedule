@@ -59,10 +59,10 @@ gulp.task('build-fly', function(){
 
     return gulp.src(config.script.fly_src)        
 		.pipe(concat(config.script.output))	
-		.pipe(terser({
-			keep_fnames: true,
-			mangle: false
-		}))		
+		// .pipe(terser({
+		// 	keep_fnames: true,
+		// 	mangle: false
+		// }))		
         .pipe(gulp.dest('flybrarian/dist/script'));
 });
 
