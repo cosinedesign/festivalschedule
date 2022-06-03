@@ -1,0 +1,10 @@
+{
+    "extends": "../typescript/base",
+    "files": [        
+        "../typescript/client/flybrarian.app.ts",
+        "../typescript/core/cosinedesign.core.ts"    
+    ], 
+    "compilerOptions": {
+        "outDir": "./lib"
+    }
+}

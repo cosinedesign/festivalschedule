@@ -1,0 +1,11 @@
+{
+    "extends": "../typescript/base",
+    "include": [
+        "../typescript/models/*.*",
+        "../typescript/api/*/*.*"
+
+    ], 
+    "compilerOptions": {
+        "outDir": "./lib"
+    }
+}

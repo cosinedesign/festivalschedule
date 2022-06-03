@@ -1,0 +1,47 @@
+
+$darkgreen:				#116611;
+$altgreen:              rgb(115, 173, 28);
+$midgreen:				#66CC66;
+$green:					#00FF00;
+$yellowgreen: 			#ADFF2F;
+$darkyellowgreen:       #82c223;
+$yellow: 				#FFFF00;
+$dimyellow:             #AAAA00;
+$darkyellow:            #666600;
+
+/* grayscales */
+$deepgray: 				#1F1F1F;
+$darkgray: 				#2F2F2F;
+
+/* disambiguation */
+$background:			$deepgray;
+
+/* FONTS */
+$font-size:             12px;
+$font-size-small:       8px;
+
+
+/* Themes 		*/
+$site-background:		$background;
+$site-text:				$yellowgreen;
+
+$feature-text:			$darkgreen;
+$timeslot:              $yellowgreen;
+$empty-time:            $dimyellow;
+$next-day:              $altgreen;
+
+
+$feature-text-FOMO:		$yellowgreen;
+$site-text-FOMO:        $yellow;
+$empty-time-FOMO:       $darkgray;      
+$event-time:            $yellow;
+$event-time-FOMO:       $darkyellow;
+
+/* Sizing */
+$quarter-hour:			15px;
+$half-hour:				$quarter-hour * 2;
+$hour:					$half-hour * 2;
+
+$quarter-hour-print:	12px;
+$half-hour-print:       $quarter-hour-print * 2;
+$hour-print:            $half-hour-print * 2;

@@ -1,0 +1,46 @@
+/* Put ellipsis into text that overflows a box */
+/* 
+    Notes: 
+    - You cannot apply text-overflow to inline elements. 
+    - Some max-width is required for text-overflow: ellipsis.
+*/
+@mixin ellipsis () {     
+    overflow:       hidden;         /* required for text-overflow: ellipsis */
+    white-space:    nowrap;         /* required for text-overflow: ellipsis */
+    text-overflow:  ellipsis;       /* required for text-overflow: ellipsis */
+}
+
+@mixin vertical-scroll-overflow () {
+    overflow-y: auto;
+}
+
+/***************************** Components ***************************/
+@mixin text () {     
+    font-size:      $font-size;
+    line-height:    $line-height;
+}
+
+@mixin text-small () {     
+    font-size:      $font-size-small;
+    line-height:    $line-height-small;
+}
+
+
+/***************************** Utility Classes ******************************/
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+.centered {
+    text-align: center;
+}
+
+@media print {
+    .page-break {
+        page-break-before: always;
+        break-before: left;
+    }
+}
