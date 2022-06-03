@@ -1,17 +1,78 @@
 {
   "name": "festival-schedule",
   "description": "tools for creating festival event lineups",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "type": "module",
   "devDependencies": {
-    "del": "^4.1.1",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^4.0.2",
-    "gulp-terser": "^1.2.0",
-    "jest": "^24.8.0",
-    "node-sass": "^4.12.0"
+    "@parcel/transformer-sass": "^2.6.0",
+    "assert": "^2.0.0",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "cross-env": "^7.0.3",
+    "crypto-browserify": "^3.12.0",
+    "del-cli": "^4.0.1",
+    "events": "^3.3.0",
+    "jest": "^28.1.0",
+    "parcel": "latest",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "querystring-es3": "^0.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "url": "^0.11.0",
+    "util": "^0.12.4"
+  },
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "koa": "^2.x"
   },
   "scripts": {
-    "test": "jest"
+    "tsc-clean": "npm run delete-api-lib & npm run delete-client-lib",
+    "delete-api-lib": "del-cli --force ./api/lib",
+    "delete-client-lib": "del-cli --force ./client/lib",
+    "start": "parcel",
+    "clean-build": "npm run tsc-clean & npm run build",
+    "clean-build-test": "npm run clean-build & npm run test",
+    "build": "npm run tsc & parcel build",
+    "build-test": "npm run build & npm run test",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "tsc-api": "tsc --build ./api/tsconfig.json",
+    "tsc-client": "tsc --build ./client/tsconfig.json",
+    "tsc": "npm run tsc-clean & npm run tsc-api & npm run tsc-client"
+  },
+  "targets": {
+    "frontend": {
+      "source": "client/index.htm",
+      "distDir": "dist/site"
+    },
+    "backend": {
+      "source": "api/api.js",
+      "distDir": "dist/server"
+    }
+  },
+  "jest": {
+    "verbose": true,
+    "clearMocks": true,
+    "coverageDirectory": "coverage",
+    "extensionsToTreatAsEsm": [
+      ".ts"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "temp-test"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "mjs"
+    ],
+    "roots": [
+      "temp-test/",
+      "test/"
+    ],
+    "testMatch": [
+      "**/tests.*.*js"
+    ],
+    "testEnvironment": "node",
+    "transform": {}
   }
 }
