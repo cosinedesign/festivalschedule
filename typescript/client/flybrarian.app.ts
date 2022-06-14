@@ -1,9 +1,9 @@
-import { controllers } from './controllers/flybrarian.controllers';
+import { dispatcher } from '../common/dispatcher';
     
-export const app = {
-        elements: {
-            content: null
-        }
+const app = {
+    elements: {
+        content: null
+    }
 };
     
 if (typeof window === "undefined") {
@@ -16,17 +16,13 @@ if (typeof window === "undefined") {
 
         document.addEventListener("DOMContentLoaded", function () {
             // init controllers
-            app.elements.content = document.getElementById('content');        
+            // @ts-ignore typescript is complaining because content is initialized to null.
+            // and it's too stupid to allow a null value to be set by something
+            const content = app.elements.content = document.getElementById('content');        
 
-            controllers.init(app);
-
-            try {
-                controllers.home.fomoVision();
-            }
-            catch (ex) {
-                controllers.home.main();                    
-            }
-
+            // @ts-ignore I know, I know, content could be null, but the application won't even start if that's the case sooooo
+            // content.innerText = JSON.stringify(festivalData);
+            dispatcher.init(app);
         });
     }
 }

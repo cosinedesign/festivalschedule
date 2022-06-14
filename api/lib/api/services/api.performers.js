@@ -1,8 +1,8 @@
 import { factory } from "../../models/events.models.factory";
-const Musician = factory.build.musician;
+const Performer = factory.build.performer;
 export const artistService = {
     get: function () {
-        return Musician();
+        return Performer();
     },
     list: function () {
         return [];

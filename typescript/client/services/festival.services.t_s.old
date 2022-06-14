@@ -1,9 +1,30 @@
-import { festivalData } from '../../data/flybrarian.data';
-import { RealWorldEvent } from '../../types/events.models';
+import { RealWorldEvent, DateTimeSpan } from '../../types/models.common';
+import { Performance } from '../../types/models.events';
+
+
+//const daysLineup = schedules[5];
+//console.log(daysLineup);
+
+// const model = {
+// 	start: daysLineup[0].start,
+// 	end: daysLineup[daysLineup.length - 1].end,
+// 	camps: camps,
+// 	// map of day's lineup per camp
+// 	lineups: daysLineup
+// };
+
+type LineupGap = {
+	prev: DateTimeSpan,
+	next: DateTimeSpan,
+	startIndex: number,
+	totalMinutes: number,
+	hours: number,
+	remainderMinutes: number 
+}
 
 // alias
-const data = festivalData;
-
+//const data = festivalData;
+/*
 // Creates a blank event to fill in empty space in the calendar
 function evGap (start: Date, end?: Date) : RealWorldEvent {
 	if (!end) { 
@@ -27,7 +48,8 @@ function sortEvents(e1: RealWorldEvent, e2: RealWorldEvent) {
 }
 
 // returns date diff in minutes
-function dateDiffMin(d1, d2) {
+function dateDiffMin(d1: Date, d2: Date) : number {
+	// @ts-ignore Typescript HATES date to number coercion for dates
 	var diff = d2 - d1; 
 	if (diff == 0) return 0;
 
@@ -38,14 +60,15 @@ function dateDiffMin(d1, d2) {
 	return diff;
 }
 
-function getGaps(lineup) {		
+function getGaps(lineup: Array<RealWorldEvent>) : Array<LineupGap> {		
 	// iterate through array, find gaps
-	const gaps = [],
+	const gaps: Array<LineupGap> = [],
 		length = lineup.length;
 
-	let current, next;
+	let current: DateTimeSpan, 
+		next: DateTimeSpan;
 			
-	for (var i = 0; i < length; i++) {
+	for (let i = 0; i < length; i++) {
 		// if we're at the last one, we obvs don't need to look for a gap
 		if ((i + 1) == length) break;
 		current = lineup[i].when;
@@ -85,15 +108,15 @@ function getGaps(lineup) {
 // return an array of gap fillers; 
 // - if they start on 30m interval, should be a 30 then 1hr
 // - if they end on 30m interval, should be hours then a 30 
-function getGapFiller (gap) : Array<RealWorldEvent> {
+function getGapFiller (gap: LineupGap) : Array<RealWorldEvent> {
 	const fillers : Array<RealWorldEvent> = [];
 	const remainingGap = {
 		start: new Date(gap.prev.end),
 		end: new Date(gap.next.start)
 	};
 
-	let gapEnd = null,
-		gapStart = null;
+	let gapEnd,
+		gapStart;
 
 	// leading 30
 	if (gap.prev.end.getMinutes() == 30) {
@@ -131,7 +154,7 @@ function getGapFiller (gap) : Array<RealWorldEvent> {
 }
 
 // TODO: good opportunity for unit testing right here
-function fillGapsInLineup(lineup, sorter?) {
+function fillGapsInLineup(lineup, sorter?) : void {
 	if (sorter) { 
 		lineup.sort(sorter);
 	}
@@ -178,6 +201,7 @@ function fillGapsInLineup(lineup, sorter?) {
 	// 	});	
 	// }
 }
+*/
 
 // insert in place
 function insertItemsIntoArray(values, index, count, factory) {
@@ -187,15 +211,16 @@ function insertItemsIntoArray(values, index, count, factory) {
 	}
 }
 
+/*
 // TODO: Massage data here
-const schedules = {}, camps = [];
+const schedules = {}, stages: Array<Stage> = [];
 
 const keys = Object.keys(data.stages);
 // for each camp
 keys.forEach(function (key) {
 	const stage = data.stages[key];
 	
-	camps.push(stage);
+	stages.push(stage);
 
 	const days = Object.keys(stage.lineups);
 	days.forEach(function (day) {
@@ -203,28 +228,17 @@ keys.forEach(function (key) {
 		schedules[day].push(stage.lineups[day]);
 	});
 });
-
-	//const daysLineup = schedules[5];
-	//console.log(daysLineup);
-
-	// const model = {
-	// 	start: daysLineup[0].start,
-	// 	end: daysLineup[daysLineup.length - 1].end,
-	// 	camps: camps,
-	// 	// map of day's lineup per camp
-	// 	lineups: daysLineup
-	// };
-
+*/
 
 const process = {
 	lineups: {
 		// returns a map of (camp, lineup), for day specified
-		byDay: function (day) {
+		byDay: function (day, stages) {
 			const lineups = new Map();
 			
-			data.stages.forEach(function (camp) {		
-				const lineup = camp.lineups.get(day);			
-				lineups.set(camp, lineup);
+			stages.forEach(function (stage) {		
+				const lineup = stage.lineups.get(day);			
+				lineups.set(stage, lineup);
 			});
 
 			// then we need to sort & fill lineups
@@ -234,6 +248,7 @@ const process = {
 	}	
 };
 
+/*
 function getEventWindow(overlap) {
 
 	return function (event) {
@@ -263,10 +278,11 @@ function fitEventWindow(overlap) {
 		return clone;
 	}
 }
+*/
 
 export const services = {
 	_test: process.lineups.byDay,
-	utils: {
+	/* utils: {
 		sortEvents: sortEvents,
 		dateDiffMin: dateDiffMin,
 		getGaps: getGaps,
@@ -274,30 +290,31 @@ export const services = {
 		fillGapsInLineup: fillGapsInLineup,
 		getEventWindow: getEventWindow,
 		fitEventWindow: fitEventWindow
-	},
+	}, */
 	lineups: {
 		// options:
 		// - filter
 		byDay: function (day, options?) {
 
-			const lineups = process.lineups.byDay(day);
+			const lineups = process.lineups.byDay(day, data.stages);
 			
-			const state = {
-				start: null,
-				end: null
+			const state: {
+				start?: Date,
+				end?: Date
+			} = {
 			};
 
-			const filter = (options && options.start) ? services.utils.fitEventWindow(options) : null; 
+			const filter = (options && options.start) ? fitEventWindow(options) : null; 
 
 			const paddedLineups = new Map();
 
 			lineups.forEach(function (lineup, camp) {
 				// In a map, a value could be null for a given key, so we must test for value to exist
 				if (lineup) {
-					const paddedLineup = [];
+					const paddedLineup: Array<Performance> = [];
 					var hasEvents = false;
 
-					lineup.forEach(function (event, day) {
+					lineup.forEach(function (event: Performance) {
 						
 						if (options && filter) {								
 							event = filter(event);
@@ -329,24 +346,25 @@ export const services = {
 			});
 
 			// Short-circuit when no start events satisfied
-			if (!state.start) return;
+			if (!state.start) return;			
 
 			// Correct for half-hours
 			if (state.start.getMinutes()) {
 				state.start = new Date(state.start);
 				state.start.setMinutes(0);
 			}
-			if (state.end.getMinutes()) {
+
+			if (state.end && state.end.getMinutes()) {
 				state.end = new Date(state.end);
 				state.end.setHours(state.end.getHours() + 1);
 				state.end.setMinutes(0);
 			}
 
 			const startHour = state.start.getHours(),
-				endHour = state.end.getHours();
+				endHour = (state.end) ? state.end.getHours() : 0;
 			
 			// make new lineup array of events, filtered to a date start/end window, and padded to earliest / lastest, and padded for gaps
-			paddedLineups.forEach(function (lineup, camp) {
+			paddedLineups.forEach(function (lineup) {
 				// first, sort the lineup by start
 				lineup.sort(sortEvents);
 
@@ -359,7 +377,8 @@ export const services = {
 					if (padHours) {
 						// add n hours to front of lineup
 						for (var i = 0; i < padHours; i++) {
-							const start = new Date(state.start);
+							// Date.now() call really only to satisfy linting; logic above should guarantee its' existence
+							const start = new Date(state.start ? state.start : Date.now());
 
 							if ((i == 0) && options && options.start && (options.start.getMinutes() == 30)) {
 									// don't pad a full hour if you only need the 30, ya moran
@@ -395,12 +414,12 @@ export const services = {
 			};
 
 			return model;
-		},
-		byCamp: function () {}
-	},
+		}
+	} //,
+	/*
 	lists: {
-		artists: function () {},
-		camps: function () {},			
+		performers: function () {},
+		stages: function () {},			
 		genres: function () {}
-	}
+	}*/
 };

@@ -1,0 +1,595 @@
+{
+    "performers": [
+        {
+            "name": "AMA",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Acid Brunch Club",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "AlexXxan",
+            "description": null,
+            "genres": [
+                "techno"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Andrea Marks",
+            "description": null,
+            "genres": [
+                "techno"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "ArcRunner",
+            "description": null,
+            "genres": [
+                "goth",
+                "industrial"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Captain Fuck",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "char7",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Chuck Chuck",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "cosinezero",
+            "description": null,
+            "genres": [
+                "bass",
+                "breaks",
+                "drumnbass",
+                "triphop"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Cromafor",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "dabu",
+            "description": null,
+            "genres": [
+                "bass",
+                "breaks",
+                "drumnbass",
+                "triphop"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Damian Paul",
+            "description": null,
+            "genres": [
+                "techno"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "dekichan",
+            "description": null,
+            "genres": [
+                "electroswing"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Nightshade",
+            "description": null,
+            "genres": [
+                "drumnbass"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "DJ SlothThrower",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "dontnormally",
+            "description": null,
+            "genres": [
+                "techno",
+                "bass"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Drift",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Elemental Flux",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Epochalyptic",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Fait Accompli",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "FiG",
+            "description": null,
+            "genres": [
+                "drumnbass",
+                "breaks"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Fox",
+            "description": null,
+            "genres": [
+                "drumnbass",
+                "hiphop"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Gary Carlow",
+            "description": null,
+            "genres": [
+                "techno",
+                "house"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "DJ Gav",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Jazz Cabbage",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Journey Weaver",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Kibbles & Beats",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Left Cat",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Living Light",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "L-Train",
+            "description": null,
+            "genres": [
+                "bass",
+                "triphop"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Keith Mattar",
+            "description": null,
+            "genres": [
+                "techno"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Megadipites",
+            "description": null,
+            "genres": [],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Myk Shyck",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Nate DeF",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Oleg",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Omega Protocol",
+            "description": null,
+            "genres": [
+                "drumnbass"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Parma Chai",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Paul Erlich",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Psylander",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Saphire",
+            "description": null,
+            "genres": [
+                "goth",
+                "industrial",
+                "downtempo"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Sasquatch",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Scrams",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "SmoKi",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Sound Shaman",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Tempo Suave",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Rob Ticho",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Tigress",
+            "description": null,
+            "genres": [
+                "bass",
+                "world music"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "(UNKNOWN)",
+            "description": null,
+            "genres": [],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Vinyl Blight",
+            "description": null,
+            "genres": [
+                "bass"
+            ],
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Your Furry Friend",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Sean Manton",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Dim Red Glo",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Kar'Nam",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "OFTHESUN",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Mike Sim",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Fractillian",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "DADABOTS",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "cRtxLzn",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Dr Snipples",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "dj cold cuts",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Audiofile77",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Eddy Van Raven",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "AWC",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "D:[JR]",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        },
+        {
+            "name": "Shwilly B",
+            "description": null,
+            "aliases": [],
+            "tags": [],
+            "keywords": [],
+            "affiliation": []
+        }
+    ]
+}

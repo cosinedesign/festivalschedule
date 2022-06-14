@@ -1,5 +1,4 @@
-
-import { controller } from '../typescript/admin/controllers/controllers.auth';
+import { guestController } from '../client/lib/admin/controllers/controllers.workflows';
 
 describe('Admin feature testing', () => {
     test('Workflow should initialize to default', () => {
@@ -10,9 +9,9 @@ describe('Admin feature testing', () => {
             roles: ["flyguest"]
         };
 
-        controller.initialize(user);
+        guestController.initialize(user);
 
-        expect(controller.workflowState).toBe(controller.workflow.states[0]);
-
+        expect(guestController.currentState).toBeDefined();
+        expect(guestController.currentState).toBe(guestController.workflow.states.new);
     });
 });

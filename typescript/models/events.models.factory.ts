@@ -1,5 +1,7 @@
 
-import { Musician, MusicEvent, Performer, RealWorldEvent, Stage, DateTimeSpan } from "../types/events.models";
+
+import { Performance, Performer, Stage } from "../types/models.events";
+import { DateTimeSpan, RealWorldEvent } from "../types/models.common";
 
 // Fun with TypeScript object conposition! 
 const partials = {
@@ -34,27 +36,28 @@ const shapes = {
         ...p.searchable,
         ...p.person,
         ...p.performer
-    } as Performer,
+    } as Performer
+    /*,
     musician: {
         ...p.searchable,
         ...p.person,
         ...p.performer,
         ...p.musician
-    } as Musician
+    } as Musician */
 }
 
 type musicEvent = {
     where: Location,
-    who: Array<Musician>,
+    who: Array<Performer>,
     when: DateTimeSpan
 }
 
 export const factory = {
     helpers: {
-        buildEvent: function (stage: Stage, artist: Performer | Array<Performer>, start: Date, end?: Date, name?: string, description?: string) : MusicEvent {
+        buildEvent: function (stage: Stage, performer: Performer | Array<Performer>, start: Date, end?: Date, name?: string, description?: string) : Performance {
                     
             // @ts-ignore this is a perfectly valid way to check to see if we have an array
-            const artists : Array<Performer> = (artist && artist.isArray && artist.isArray()) ? artist : [artist];
+            const performers : Array<Performer> = (performer && performer.isArray && performer.isArray()) ? performer : [performer];
 
             // default to an hour
 			if (!end) { 
@@ -63,11 +66,11 @@ export const factory = {
 				end.setHours(end.getHours()+1);
 			}
 
-            const e = factory.build.musicEvent({
+            const e = factory.build.performance({
                 name: name, 
                 description: description,
                 where: stage,
-                who: artists ,
+                who: performers,
                 when: {
                     start: start,
                     end: end
@@ -82,6 +85,7 @@ export const factory = {
         },
         buildCamp: function (name: string) : Stage {
             return {
+                id: null, 
                 name: name,
                 events: new Set(),
                 lineups: new Map<number, Array<RealWorldEvent>>(),
@@ -90,20 +94,13 @@ export const factory = {
         }
     },
     build: {
-        musicEvent: function (props?: any) : MusicEvent {
+        performance: function (props?: any) : Performance {
             
             return {
                 ...p.performanceEvent,                
                 ...props
             };
-        },
-        musician: function (props?: any): Musician {
-            
-            return {
-                ...shapes.musician,
-                ...props
-            };
-        },
+        },      
         performer: function (props?: any): Performer {
             
             return {

@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "devDependencies": {
+    "@parcel/service-worker": "^2.6.0",
     "@parcel/transformer-sass": "^2.6.0",
     "assert": "^2.0.0",
     "browserify-zlib": "^0.2.0",
@@ -28,24 +29,32 @@
   },
   "scripts": {
     "tsc-clean": "npm run delete-api-lib & npm run delete-client-lib",
+    "package-clean": "npm run delete-dist",
     "delete-api-lib": "del-cli --force ./api/lib",
     "delete-client-lib": "del-cli --force ./client/lib",
+    "delete-dist": "del-cli --force ./dist",
+    "delete-dist-api": "del-cli --force ./dist/server",
+    "delete-dist-client": "del-cli --force ./dist/client",
     "start": "parcel",
-    "clean-build": "npm run tsc-clean & npm run build",
+    "clean": "npm run tsc-clean & npm run package-clean",
+    "clean-build": "npm run clean & npm run build",
     "clean-build-test": "npm run clean-build & npm run test",
-    "build": "npm run tsc & parcel build",
+    "build": "npm run tsc & parcel build",    
+    "debug": "npm run tsc & parcel build --no-optimize",    
     "build-test": "npm run build & npm run test",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "tsc-api": "tsc --build ./api/tsconfig.json",
     "tsc-client": "tsc --build ./client/tsconfig.json",
-    "tsc": "npm run tsc-clean & npm run tsc-api & npm run tsc-client"
+    "tsc": "npm run tsc-api & npm run tsc-client"
   },
   "targets": {
     "frontend": {
       "source": "client/index.htm",
+      "publicUrl": "./",
       "distDir": "dist/site"
     },
     "backend": {
+      "context": "node",
       "source": "api/api.js",
       "distDir": "dist/server"
     }

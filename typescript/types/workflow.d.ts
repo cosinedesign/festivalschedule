@@ -5,10 +5,9 @@ interface IWorkflowItem {
 }
 
 export interface IWorkflow extends IWorkflowItem {
-    get initialState(): string | IWorkflowState;
-    set initialState(value: string | IWorkflowState);
-    get states(): Array<IWorkflowState>;
-    get transitions(): Array<WorkflowTransition>;
+    initialState: string | IWorkflowState;
+    readonly states: Array<IWorkflowState>;
+    readonly transitions: Array<WorkflowTransition>;
 }
 
 export interface IWorkflowState extends IWorkflowItem {

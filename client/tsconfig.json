@@ -1,8 +1,10 @@
 {
     "extends": "../typescript/base",
     "files": [        
-        "../typescript/client/flybrarian.app.ts",
-        "../typescript/core/cosinedesign.core.ts"    
+        "../typescript/core/cosinedesign.core.ts",
+        "../typescript/models/events.models.factory.ts",
+        "../typescript/client/flybrarian.app.ts",        
+        "../typescript/admin/controllers/controllers.workflows.ts"
     ], 
     "compilerOptions": {
         "outDir": "./lib"

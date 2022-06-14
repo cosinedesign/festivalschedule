@@ -29,30 +29,31 @@ const shapes = {
         ...p.searchable,
         ...p.person,
         ...p.performer
-    },
+    }
+    /*,
     musician: {
         ...p.searchable,
         ...p.person,
         ...p.performer,
         ...p.musician
-    }
+    } as Musician */
 };
 export const factory = {
     helpers: {
-        buildEvent: function (stage, artist, start, end, name, description) {
+        buildEvent: function (stage, performer, start, end, name, description) {
             // @ts-ignore this is a perfectly valid way to check to see if we have an array
-            const artists = (artist && artist.isArray && artist.isArray()) ? artist : [artist];
+            const performers = (performer && performer.isArray && performer.isArray()) ? performer : [performer];
             // default to an hour
             if (!end) {
                 end = new Date(start);
                 // Magically, this seems to increment the rest of the date
                 end.setHours(end.getHours() + 1);
             }
-            const e = factory.build.musicEvent({
+            const e = factory.build.performance({
                 name: name,
                 description: description,
                 where: stage,
-                who: artists,
+                who: performers,
                 when: {
                     start: start,
                     end: end
@@ -65,6 +66,7 @@ export const factory = {
         },
         buildCamp: function (name) {
             return {
+                id: null,
                 name: name,
                 events: new Set(),
                 lineups: new Map(),
@@ -73,15 +75,9 @@ export const factory = {
         }
     },
     build: {
-        musicEvent: function (props) {
+        performance: function (props) {
             return {
                 ...p.performanceEvent,
-                ...props
-            };
-        },
-        musician: function (props) {
-            return {
-                ...shapes.musician,
                 ...props
             };
         },

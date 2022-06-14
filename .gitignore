@@ -5,3 +5,4 @@ temp-test
 .parcel-cache
 .vscode
 dist
+secret

@@ -1,0 +1,2658 @@
+{   
+    "performances": [
+        {
+            "when": {
+                "start": "2022-07-03T22:30:00.000Z",
+                "end": "2022-07-04T00:30:00.000Z"
+            },
+            "where": {
+                "name": "Gluten Free Halloween",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "DJ Gav",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "BLK WICCN BEATZ",
+            "description": "hip hop, dark house, d&b, kumbía en español, bounce beatz, Taino tracks by Queer Black, Brown, and Idigenous Peoples."
+        },
+        {
+            "when": {
+                "start": "2022-07-05T01:00:00.000Z",
+                "end": "2022-07-05T05:00:00.000Z"
+            },
+            "where": {
+                "name": "Strange Maine",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                [
+                    {
+                        "name": "ArcRunner",
+                        "description": null,
+                        "genres": [
+                            "goth",
+                            "industrial"
+                        ],
+                        "aliases": [],
+                        "tags": [],
+                        "keywords": [],
+                        "affiliation": []
+                    },
+                    {
+                        "name": "Saphire",
+                        "description": null,
+                        "genres": [
+                            "goth",
+                            "industrial",
+                            "downtempo"
+                        ],
+                        "aliases": [],
+                        "tags": [],
+                        "keywords": [],
+                        "affiliation": []
+                    }
+                ]
+            ],
+            "name": "Shi*Wrecked, Under The Sea",
+            "description": "Wash ashore! Come visit the dark depths that live near the lighthouse for Strange Maine's annual Thursday night gathering. Dance to Goth/Industrial and all things Dark, meet some Mainers and hang out in the Lighthouse. Alcoholic and Non alcoholic drinks will be available."
+        },
+        {
+            "when": {
+                "start": "2022-07-07T01:00:00.000Z",
+                "end": "2022-07-07T05:00:00.000Z"
+            },
+            "where": {
+                "name": "Strange Maine",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Saphire",
+                    "description": null,
+                    "genres": [
+                        "goth",
+                        "industrial",
+                        "downtempo"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Slow & Sexy Dance Party",
+            "description": "Heed the siren call! We slow down the BPM so you can make your move, inspired by Ceremony's 'Down With Tempo'. Featuring DJ Saphire and our guest bartender: the lovely Talena (Bring A Cup) will be pouring alcoholic and non alcoholic drinks."
+        },
+        {
+            "when": {
+                "start": "2022-07-06T03:00:00.000Z",
+                "end": "2022-07-06T04:00:00.000Z"
+            },
+            "where": {
+                "name": "Femme Dom",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "ArcRunner",
+                    "description": null,
+                    "genres": [
+                        "goth",
+                        "industrial"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T04:00:00.000Z",
+                "end": "2022-07-06T05:00:00.000Z"
+            },
+            "where": {
+                "name": "Femme Dom",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Saphire",
+                    "description": null,
+                    "genres": [
+                        "goth",
+                        "industrial",
+                        "downtempo"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T05:00:00.000Z",
+                "end": "2022-07-06T06:00:00.000Z"
+            },
+            "where": {
+                "name": "Femme Dom",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "AlexXxan",
+                    "description": null,
+                    "genres": [
+                        "techno"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T06:00:00.000Z",
+                "end": "2022-07-06T07:00:00.000Z"
+            },
+            "where": {
+                "name": "Femme Dom",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "dontnormally",
+                    "description": null,
+                    "genres": [
+                        "techno",
+                        "bass"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T20:00:00.000Z",
+                "end": "2022-07-06T21:00:00.000Z"
+            },
+            "where": {
+                "name": "Femme Dom",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Scrams",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T21:00:00.000Z",
+                "end": "2022-07-06T23:00:00.000Z"
+            },
+            "where": {
+                "name": "Femme Dom",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                [
+                    {
+                        "name": "AMA",
+                        "description": null,
+                        "aliases": [],
+                        "tags": [],
+                        "keywords": [],
+                        "affiliation": []
+                    },
+                    {
+                        "name": "Fait Accompli",
+                        "description": null,
+                        "aliases": [],
+                        "tags": [],
+                        "keywords": [],
+                        "affiliation": []
+                    }
+                ]
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T02:00:00.000Z",
+                "end": "2022-07-07T03:00:00.000Z"
+            },
+            "where": {
+                "name": "Femme Dom",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "char7",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T03:00:00.000Z",
+                "end": "2022-07-07T04:00:00.000Z"
+            },
+            "where": {
+                "name": "Femme Dom",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "dekichan",
+                    "description": null,
+                    "genres": [
+                        "electroswing"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T04:00:00.000Z",
+                "end": "2022-07-07T05:00:00.000Z"
+            },
+            "where": {
+                "name": "Femme Dom",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Kibbles & Beats",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T05:00:00.000Z",
+                "end": "2022-07-07T06:00:00.000Z"
+            },
+            "where": {
+                "name": "Femme Dom",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "cosinezero",
+                    "description": null,
+                    "genres": [
+                        "bass",
+                        "breaks",
+                        "drumnbass",
+                        "triphop"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T06:00:00.000Z",
+                "end": "2022-07-07T07:00:00.000Z"
+            },
+            "where": {
+                "name": "Femme Dom",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Vinyl Blight",
+                    "description": null,
+                    "genres": [
+                        "bass"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-03T18:00:00.000Z",
+                "end": "2022-07-03T20:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                [
+                    {
+                        "name": "DJ SlothThrower",
+                        "description": null,
+                        "aliases": [],
+                        "tags": [],
+                        "keywords": [],
+                        "affiliation": []
+                    },
+                    {
+                        "name": "FiG",
+                        "description": null,
+                        "genres": [
+                            "drumnbass",
+                            "breaks"
+                        ],
+                        "aliases": [],
+                        "tags": [],
+                        "keywords": [],
+                        "affiliation": []
+                    }
+                ]
+            ],
+            "name": "Rawr a Cup ~ Bring a Lion",
+            "description": "Bring a Cup takes over the Lions."
+        },
+        {
+            "when": {
+                "start": "2022-07-03T22:00:00.000Z",
+                "end": "2022-07-03T23:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Elemental Flux",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-03T23:00:00.000Z",
+                "end": "2022-07-04T01:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "L-Train",
+                    "description": null,
+                    "genres": [
+                        "bass",
+                        "triphop"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-04T19:00:00.000Z",
+                "end": "2022-07-04T20:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Epochalyptic",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-04T20:00:00.000Z",
+                "end": "2022-07-04T21:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Jazz Cabbage",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-04T21:00:00.000Z",
+                "end": "2022-07-04T22:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Parma Chai",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-04T22:00:00.000Z",
+                "end": "2022-07-04T23:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Myk Shyck",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-04T23:00:00.000Z",
+                "end": "2022-07-05T00:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Paul Erlich",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T00:00:00.000Z",
+                "end": "2022-07-05T01:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Sean Manton",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T01:00:00.000Z",
+                "end": "2022-07-05T02:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Dim Red Glo",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T02:00:00.000Z",
+                "end": "2022-07-05T03:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Kar'Nam",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T03:00:00.000Z",
+                "end": "2022-07-05T04:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "OFTHESUN",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T04:00:00.000Z",
+                "end": "2022-07-05T05:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Mike Sim",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T05:00:00.000Z",
+                "end": "2022-07-05T06:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Fractillian",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T06:00:00.000Z",
+                "end": "2022-07-05T06:30:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "DADABOTS",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T06:30:00.000Z",
+                "end": "2022-07-05T07:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "cRtxLzn",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T07:00:00.000Z",
+                "end": "2022-07-05T08:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Drift",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T08:00:00.000Z",
+                "end": "2022-07-05T09:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Psylander",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T09:00:00.000Z",
+                "end": "2022-07-05T11:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Tempo Suave",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T19:00:00.000Z",
+                "end": "2022-07-05T20:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Nate DeF",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T20:00:00.000Z",
+                "end": "2022-07-05T21:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Omega Protocol",
+                    "description": null,
+                    "genres": [
+                        "drumnbass"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T21:00:00.000Z",
+                "end": "2022-07-05T22:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "SmoKi",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T03:00:00.000Z",
+                "end": "2022-07-06T04:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Living Light",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T04:00:00.000Z",
+                "end": "2022-07-06T05:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Acid Brunch Club",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T05:00:00.000Z",
+                "end": "2022-07-06T06:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "dontnormally",
+                    "description": null,
+                    "genres": [
+                        "techno",
+                        "bass"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T06:00:00.000Z",
+                "end": "2022-07-06T07:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Sasquatch",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T07:00:00.000Z",
+                "end": "2022-07-06T08:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Captain Fuck",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T08:00:00.000Z",
+                "end": "2022-07-06T09:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Tigress",
+                    "description": null,
+                    "genres": [
+                        "bass",
+                        "world music"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T09:00:00.000Z",
+                "end": "2022-07-06T11:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Sound Shaman",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T20:30:00.000Z",
+                "end": "2022-07-06T21:30:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "char7",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Queer Dance Party"
+        },
+        {
+            "when": {
+                "start": "2022-07-06T21:30:00.000Z",
+                "end": "2022-07-06T22:30:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Left Cat",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T22:30:00.000Z",
+                "end": "2022-07-06T23:30:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Keith Mattar",
+                    "description": null,
+                    "genres": [
+                        "techno"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T02:00:00.000Z",
+                "end": "2022-07-07T03:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "AlexXxan",
+                    "description": null,
+                    "genres": [
+                        "techno"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T03:00:00.000Z",
+                "end": "2022-07-07T04:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "cosinezero",
+                    "description": null,
+                    "genres": [
+                        "bass",
+                        "breaks",
+                        "drumnbass",
+                        "triphop"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T04:00:00.000Z",
+                "end": "2022-07-07T05:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Vinyl Blight",
+                    "description": null,
+                    "genres": [
+                        "bass"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T05:00:00.000Z",
+                "end": "2022-07-07T06:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "dabu",
+                    "description": null,
+                    "genres": [
+                        "bass",
+                        "breaks",
+                        "drumnbass",
+                        "triphop"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T06:00:00.000Z",
+                "end": "2022-07-07T07:00:00.000Z"
+            },
+            "where": {
+                "name": "Lovin' Lions",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "DJ SlothThrower",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-04T17:00:00.000Z",
+                "end": "2022-07-04T18:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Dr Snipples",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-04T18:00:00.000Z",
+                "end": "2022-07-04T19:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "dj cold cuts",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-04T19:00:00.000Z",
+                "end": "2022-07-04T20:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Audiofile77",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-04T20:00:00.000Z",
+                "end": "2022-07-04T21:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Megadipites",
+                    "description": null,
+                    "genres": [],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-04T21:00:00.000Z",
+                "end": "2022-07-04T22:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "DJ SlothThrower",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T02:00:00.000Z",
+                "end": "2022-07-05T03:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "AlexXxan",
+                    "description": null,
+                    "genres": [
+                        "techno"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T03:00:00.000Z",
+                "end": "2022-07-05T04:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Shwilly B",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T04:00:00.000Z",
+                "end": "2022-07-05T05:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Megadipites",
+                    "description": null,
+                    "genres": [],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T05:00:00.000Z",
+                "end": "2022-07-05T06:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Left Cat",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T06:00:00.000Z",
+                "end": "2022-07-05T07:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Eddy Van Raven",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T07:00:00.000Z",
+                "end": "2022-07-05T08:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "dontnormally",
+                    "description": null,
+                    "genres": [
+                        "techno",
+                        "bass"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T08:00:00.000Z",
+                "end": "2022-07-05T09:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "AWC",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T09:00:00.000Z",
+                "end": "2022-07-05T10:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "D:[JR]",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T03:00:00.000Z",
+                "end": "2022-07-06T04:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "cosinezero",
+                    "description": null,
+                    "genres": [
+                        "bass",
+                        "breaks",
+                        "drumnbass",
+                        "triphop"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T04:00:00.000Z",
+                "end": "2022-07-06T07:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                [
+                    {
+                        "name": "Fox",
+                        "description": null,
+                        "genres": [
+                            "drumnbass",
+                            "hiphop"
+                        ],
+                        "aliases": [],
+                        "tags": [],
+                        "keywords": [],
+                        "affiliation": []
+                    },
+                    {
+                        "name": "FiG",
+                        "description": null,
+                        "genres": [
+                            "drumnbass",
+                            "breaks"
+                        ],
+                        "aliases": [],
+                        "tags": [],
+                        "keywords": [],
+                        "affiliation": []
+                    },
+                    {
+                        "name": "dabu",
+                        "description": null,
+                        "genres": [
+                            "bass",
+                            "breaks",
+                            "drumnbass",
+                            "triphop"
+                        ],
+                        "aliases": [],
+                        "tags": [],
+                        "keywords": [],
+                        "affiliation": []
+                    },
+                    {
+                        "name": "Oleg",
+                        "description": null,
+                        "aliases": [],
+                        "tags": [],
+                        "keywords": [],
+                        "affiliation": []
+                    }
+                ]
+            ],
+            "name": "DnB Throwdown"
+        },
+        {
+            "when": {
+                "start": "2022-07-06T07:00:00.000Z",
+                "end": "2022-07-06T08:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Vinyl Blight",
+                    "description": null,
+                    "genres": [
+                        "bass"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T08:00:00.000Z",
+                "end": "2022-07-06T09:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Omega Protocol",
+                    "description": null,
+                    "genres": [
+                        "drumnbass"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T09:00:00.000Z",
+                "end": "2022-07-06T10:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Psylander",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T15:00:00.000Z",
+                "end": "2022-07-06T16:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Kar'Nam",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T18:00:00.000Z",
+                "end": "2022-07-06T19:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "char7",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T19:00:00.000Z",
+                "end": "2022-07-06T20:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Andrea Marks",
+                    "description": null,
+                    "genres": [
+                        "techno"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T02:00:00.000Z",
+                "end": "2022-07-07T03:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Journey Weaver",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T03:00:00.000Z",
+                "end": "2022-07-07T04:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Cromafor",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T04:00:00.000Z",
+                "end": "2022-07-07T05:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Tigress",
+                    "description": null,
+                    "genres": [
+                        "bass",
+                        "world music"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T05:00:00.000Z",
+                "end": "2022-07-07T06:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Living Light",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T06:00:00.000Z",
+                "end": "2022-07-07T07:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Keith Mattar",
+                    "description": null,
+                    "genres": [
+                        "techno"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T07:00:00.000Z",
+                "end": "2022-07-07T08:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Psylander",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T08:00:00.000Z",
+                "end": "2022-07-07T10:00:00.000Z"
+            },
+            "where": {
+                "name": "Camp Lamp",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Gary Carlow",
+                    "description": null,
+                    "genres": [
+                        "techno",
+                        "house"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-04T17:00:00.000Z",
+                "end": "2022-07-04T19:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Journey Weaver",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Ecstatic Dance"
+        },
+        {
+            "when": {
+                "start": "2022-07-04T20:00:00.000Z",
+                "end": "2022-07-04T22:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Gary Carlow",
+                    "description": null,
+                    "genres": [
+                        "techno",
+                        "house"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Disco Party"
+        },
+        {
+            "when": {
+                "start": "2022-07-04T22:00:00.000Z",
+                "end": "2022-07-05T00:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "char7",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T00:00:00.000Z",
+                "end": "2022-07-05T01:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Omega Protocol",
+                    "description": null,
+                    "genres": [
+                        "drumnbass"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T01:00:00.000Z",
+                "end": "2022-07-05T02:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Oleg",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T02:00:00.000Z",
+                "end": "2022-07-05T03:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Nightshade",
+                    "description": null,
+                    "genres": [
+                        "drumnbass"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T03:00:00.000Z",
+                "end": "2022-07-05T04:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "dekichan",
+                    "description": null,
+                    "genres": [
+                        "electroswing"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T04:00:00.000Z",
+                "end": "2022-07-05T05:30:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Living Light",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T05:30:00.000Z",
+                "end": "2022-07-05T07:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "FiG",
+                    "description": null,
+                    "genres": [
+                        "drumnbass",
+                        "breaks"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T07:00:00.000Z",
+                "end": "2022-07-05T08:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Fox",
+                    "description": null,
+                    "genres": [
+                        "drumnbass",
+                        "hiphop"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T08:00:00.000Z",
+                "end": "2022-07-05T09:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Vinyl Blight",
+                    "description": null,
+                    "genres": [
+                        "bass"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-05T19:00:00.000Z",
+                "end": "2022-07-05T21:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Rob Ticho",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Mx Firefly"
+        },
+        {
+            "when": {
+                "start": "2022-07-05T21:00:00.000Z",
+                "end": "2022-07-05T22:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Rob Ticho",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Mx Firefly Afterparty"
+        },
+        {
+            "when": {
+                "start": "2022-07-05T22:00:00.000Z",
+                "end": "2022-07-05T23:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "dekichan",
+                    "description": null,
+                    "genres": [
+                        "electroswing"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Mx Firefly Afterparty"
+        },
+        {
+            "when": {
+                "start": "2022-07-06T04:00:00.000Z",
+                "end": "2022-07-06T05:30:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Damian Paul",
+                    "description": null,
+                    "genres": [
+                        "techno"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T05:30:00.000Z",
+                "end": "2022-07-06T09:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                [
+                    {
+                        "name": "Keith Mattar",
+                        "description": null,
+                        "genres": [
+                            "techno"
+                        ],
+                        "aliases": [],
+                        "tags": [],
+                        "keywords": [],
+                        "affiliation": []
+                    },
+                    {
+                        "name": "Gary Carlow",
+                        "description": null,
+                        "genres": [
+                            "techno",
+                            "house"
+                        ],
+                        "aliases": [],
+                        "tags": [],
+                        "keywords": [],
+                        "affiliation": []
+                    }
+                ]
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-06T18:00:00.000Z",
+                "end": "2022-07-06T20:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "(UNKNOWN)",
+                    "description": null,
+                    "genres": [],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Contra Dance"
+        },
+        {
+            "when": {
+                "start": "2022-07-06T20:00:00.000Z",
+                "end": "2022-07-06T21:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "dabu",
+                    "description": null,
+                    "genres": [
+                        "bass",
+                        "breaks",
+                        "drumnbass",
+                        "triphop"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T03:00:00.000Z",
+                "end": "2022-07-07T04:30:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Shwilly B",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T04:30:00.000Z",
+                "end": "2022-07-07T05:30:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Megadipites",
+                    "description": null,
+                    "genres": [],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T05:30:00.000Z",
+                "end": "2022-07-07T07:30:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Eddy Van Raven",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-07T07:30:00.000Z",
+                "end": "2022-07-07T09:00:00.000Z"
+            },
+            "where": {
+                "name": "Diode",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "dabu",
+                    "description": null,
+                    "genres": [
+                        "bass",
+                        "breaks",
+                        "drumnbass",
+                        "triphop"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ]
+        },
+        {
+            "when": {
+                "start": "2022-07-03T20:00:00.000Z",
+                "end": "2022-07-03T22:00:00.000Z"
+            },
+            "where": {
+                "name": "Bring a Cup",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Captain Fuck",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Rawr a Cup ~ Bring a Lion",
+            "description": "The Lions take over Bring a Cup."
+        },
+        {
+            "when": {
+                "start": "2022-07-04T20:00:00.000Z",
+                "end": "2022-07-04T22:00:00.000Z"
+            },
+            "where": {
+                "name": "Bring a Cup",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "L-Train",
+                    "description": null,
+                    "genres": [
+                        "bass",
+                        "triphop"
+                    ],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Party Music"
+        },
+        {
+            "when": {
+                "start": "2022-07-05T00:00:00.000Z",
+                "end": "2022-07-05T01:00:00.000Z"
+            },
+            "where": {
+                "name": "Bring a Cup",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "(UNKNOWN)",
+                    "description": null,
+                    "genres": [],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Live Music Jam Session"
+        },
+        {
+            "when": {
+                "start": "2022-07-05T01:00:00.000Z",
+                "end": "2022-07-05T02:00:00.000Z"
+            },
+            "where": {
+                "name": "Bring a Cup",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "(UNKNOWN)",
+                    "description": null,
+                    "genres": [],
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Moar Live Music"
+        },
+        {
+            "when": {
+                "start": "2022-07-05T20:00:00.000Z",
+                "end": "2022-07-05T22:00:00.000Z"
+            },
+            "where": {
+                "name": "Bring a Cup",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Chuck Chuck",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Chuck Chuck spins us some Prince"
+        },
+        {
+            "when": {
+                "start": "2022-07-06T20:00:00.000Z",
+                "end": "2022-07-06T22:00:00.000Z"
+            },
+            "where": {
+                "name": "Bring a Cup",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Chuck Chuck",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Chuck Chuck spins us some party funk & breaks"
+        },
+        {
+            "when": {
+                "start": "2022-07-06T23:00:00.000Z",
+                "end": "2022-07-07T01:00:00.000Z"
+            },
+            "where": {
+                "name": "Bring a Cup",
+                "events": {},
+                "lineups": {},
+                "days": {}
+            },
+            "who": [
+                {
+                    "name": "Chuck Chuck",
+                    "description": null,
+                    "aliases": [],
+                    "tags": [],
+                    "keywords": [],
+                    "affiliation": []
+                }
+            ],
+            "name": "Chuck Chuck spins us some hiphop & soul"
+        }
+    ]
+}

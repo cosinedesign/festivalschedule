@@ -1,18 +1,24 @@
+import {manifest, version} from '@parcel/service-worker';
+
+/*
 const CACHE_NAME = 'fly-cache-v16';
 const urlsToCache = [
-    '/flybrarian/index.htm',
-    '/flybrarian/style/style.css',
-    '/flybrarian/script/site.js',    
-    '/flybrarian/style/assets/Flybrarian-Header.gif',
-    '/flybrarian/style/assets/Flybrarian-Header-print.gif',
-    '/flybrarian/style/assets/Flybrarian-Header-FOMO.gif',
-    '/flybrarian/style/assets/icon-highres.png'
+    './index.htm',
+    './style/style.css',
+    './script/site.js',    
+    './style/assets/Flybrarian-Header.gif',
+    './style/assets/Flybrarian-Header-print.gif',
+    './style/assets/Flybrarian-Header-FOMO.gif',
+    './style/assets/icon-highres.png'
 ];
+*/
 
-self.addEventListener('install', event => {
+self.addEventListener('install', async e => {
     // console.info('service worker is being installed');
-
-    event.waitUntil(
+    const cache = await caches.open(version);
+    console.log("AddAll", manifest);
+    await cache.addAll(manifest);
+/*    e.waitUntil(
         caches.open(CACHE_NAME)
             // add files to cache
             .then(cache => cache.addAll(urlsToCache))
@@ -21,12 +27,17 @@ self.addEventListener('install', event => {
                 console.log(error);
             })
     );
+*/
 });
 
-self.addEventListener('activate', event => {
+self.addEventListener('activate', async e => {
     // console.info('activate event detected');
-
-    event.waitUntil(
+    const keys = await caches.keys();
+    await Promise.all(
+      keys.map(key => key !== version && caches.delete(key))
+    );
+    /*
+    e.waitUntil(
         caches.keys()
             .then(keyList => {
                 return Promise.all(keyList.map(key => {
@@ -42,6 +53,7 @@ self.addEventListener('activate', event => {
                 console.log(error);
             })
     );
+    */
 });
 
 // self.addEventListener('fetch', event => {
@@ -57,14 +69,14 @@ self.addEventListener('activate', event => {
 //     );
 // });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', async function(event) {
     event.respondWith(
       caches.match(event.request).then(function(response) {
         return response || fetch(event.request);
       })
       .catch(function(err) {
         // If both fail, show a generic fallback:
-        return caches.match('/flybrarian/index.htm');
+        return caches.match('./index.htm');
         // However, in reality you'd have many different
         // fallbacks, depending on URL & headers.
         // Eg, a fallback silhouette image for avatars.

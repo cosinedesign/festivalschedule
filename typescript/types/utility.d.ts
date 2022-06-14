@@ -1,8 +1,8 @@
-import { Workflow, WorkflowState } from "./workflow";
 
 export interface IHash<T> {
     [index: string]: T;
 }
+
 
 export interface IUser {
     name: string,
@@ -10,8 +10,3 @@ export interface IUser {
     roles: Array<string>
 }
 
-export type Controller {
-    initialize: Function;
-    get workflow () : Workflow;
-    get workflowState () : WorkflowState;
-}

@@ -1,41 +1,44 @@
 import { cosinedesign } from '../../core/cosinedesign.core';
-import { services } from '../services/festival.services';
+import { eventService as services } from '../services/festival.services.events';
 import { views } from '../views/flybrarian.views';
 import { configService } from '../services/festival.services.config';
+const stages = services.data.stages;
 const ui = cosinedesign.core.ui;
+const create = ui.create, clear = ui.clear;
 const config = configService.get();
-const state = {}, days = config.days, FOMO_LENGTH_HOURS = config.FOMO_HOURS || 3, FOMO_REFRESH = config.FOMO_REFRESH; // 20 seconds
+const state = {
+    elements: {}
+}, days = config.days, FOMO_LENGTH_HOURS = config.FOMO_HOURS || 3, FOMO_REFRESH = config.FOMO_REFRESH; // 20 seconds
 function d(day, hour, min) {
     if (!min)
         min = 0;
     return new Date(config.year, config.month, day, hour, min);
 }
 export const controllers = {
-    init: function (app) {
-        state.app = app;
+    init: function (appState) {
+        state.elements = appState.elements;
     },
     home: {
-        main: function () {
-            const create = ui.create, content = state.app.elements.content;
-            ui.clear(content);
+        main: async function () {
+            const content = state.elements.content;
+            clear(content);
             document.body.classList.remove('fomo');
             const currentDay = (new Date(Date.now())).getDay();
-            //console.log(lineup);
             // TODO: 
-            //debugger;
             // load our first view
             //const lineupView = views.Lineup({});
             // const timeline = views.Timeline({});
             // state.app.elements.content.appendChild(timeline.mount());
             // timeline.render();
             //<P style="page-break-before: always"> 
-            for (var day = currentDay; day < 7; day++) {
+            for (let day = currentDay; day < 7; day++) {
                 // const model = services.lineups.byDay(day, { filter: services.utils.fitEventWindow({
                 //     start: new Date('July 5, 2019 22:00:00'),
                 //     end: new Date('July 6 2019 01:00:00')
-                // }) });                
-                const model = services.lineups.byDay(day);
+                // }) });    
+                const model = services.lineups.byDay(day, stages);
                 if (model && model.start) {
+                    debugger;
                     const dayHeader = content.appendChild(create('p', 'header'));
                     dayHeader.innerText = model.start.toLocaleDateString('default', {
                         weekday: "long",
@@ -59,6 +62,7 @@ export const controllers = {
                     }
                     catch (ex) {
                         // DO NOTHING HERE
+                        console.error(ex);
                         debugger;
                     }
                 }, FOMO_REFRESH);
@@ -103,7 +107,7 @@ export const controllers = {
                 const endTime = new Date(today);
                 endTime.setHours(endTime.getHours() + FOMO_LENGTH_HOURS);
                 // IF we're after midnight, we may not get morning hours because lineup is by day
-                const model = services.lineups.byDay((currentHour < 7) ? (day - 1) : day, {
+                const model = services.lineups.byDay((currentHour < 7) ? (day - 1) : day, stages, {
                     start: today,
                     end: endTime
                 });
@@ -139,7 +143,6 @@ export const controllers = {
                 console.error(ex);
                 throw ex;
             }
-        },
-        camp: function () { }
+        }
     }
 };

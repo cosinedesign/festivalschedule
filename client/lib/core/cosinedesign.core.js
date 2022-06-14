@@ -1,5 +1,31 @@
 // wat where the dependencies why no dependencies
-export const cosinedesign = {
+let cd;
+function navigateTo(source, path) {
+    const breadcrumbs = path.split('.');
+    const length = breadcrumbs.length;
+    let current = source;
+    breadcrumbs.forEach((crumb) => {
+        if (current)
+            current = current[crumb];
+    });
+    return current;
+}
+function objectPathToObject(path) {
+    // split the string into 
+    const breadcrumbs = path.split('.');
+    const objectPath = {}, length = breadcrumbs.length;
+    let current = objectPath;
+    breadcrumbs.forEach((crumb, index) => {
+        if (index + 1 == length) {
+            current[crumb] = null;
+        }
+        else {
+            current = current[crumb] = {};
+        }
+    });
+    return objectPath;
+}
+export const cosinedesign = cd = {
     core: {
         ui: {
             clear: function (el) {
@@ -71,6 +97,8 @@ export const cosinedesign = {
                     // trigger an event with any number of arguments passed into it
                     trigger: function (eventName) {
                         const handlers = handlerMap.get(this);
+                        if (!handlers)
+                            return;
                         // This line MUST stay to keep the eventName after the splice call.
                         // in fact, do not optimize anything in this method; 
                         // order is extremely important due to magic and dragons
@@ -88,6 +116,62 @@ export const cosinedesign = {
         }
     },
     data: {
+        join: {
+            // take structure from left, overwrite with values from right that are in left			
+            left: function (left, right) {
+                const keys = Object.keys(left);
+                const result = {};
+                let key;
+                while (key = keys.pop()) {
+                    result[key] = right[key] || left[key];
+                }
+                return result;
+            },
+            // take structure from left, create new object with values from right, discard items with no match
+            inner: function (left, right) {
+                const keys = Object.keys(left);
+                const result = {};
+                let key;
+                while (key = keys.pop()) {
+                    result[key] = right[key];
+                }
+                return result;
+            },
+            deep: {
+                left: function deepLeft(left, right) {
+                    if (!left)
+                        return right;
+                    const keys = Object.keys(left);
+                    const result = {};
+                    let key;
+                    while (key = keys.pop()) {
+                        const leftVal = left ? left[key] : null, rightVal = right ? right[key] : null;
+                        if (typeof leftVal == 'object') {
+                            result[key] = deepLeft(leftVal, rightVal);
+                        }
+                        else {
+                            result[key] = rightVal || leftVal;
+                        }
+                    }
+                    return result;
+                },
+                inner: function deepInner(left, right) {
+                    const keys = Object.keys(left);
+                    const result = {};
+                    let key;
+                    while (key = keys.pop()) {
+                        const value = right[key];
+                        if (typeof value == 'object') {
+                            result[key] = deepInner(left[key], right[key]);
+                        }
+                        else {
+                            (value) ? (result[key] = value) : null;
+                        }
+                    }
+                    return result;
+                }
+            }
+        },
         sort: {
             asc: function (a1, b1) {
                 if (a1 > b1)
@@ -103,6 +187,37 @@ export const cosinedesign = {
                     return -1;
                 return 0;
             }
-        }
+        },
+        Store: function (initialState) {
+            const state = initialState || {};
+            return {
+                initialize: function (importState) {
+                    Object.assign(state, importState);
+                },
+                subscribe: function (path, handler) { },
+                // allow listening to a slice of the store
+                getSlice: function (path, preserveStructure) {
+                    if (preserveStructure) {
+                        const sliceDef = objectPathToObject(path);
+                        return cd.data.join.deep.left(sliceDef, state);
+                    }
+                    else {
+                        const stateVal = navigateTo(state, path);
+                        return Object.assign({}, stateVal);
+                    }
+                },
+                //
+                setSlice: function (path, update, alwaysTrigger) {
+                    const stateVal = navigateTo(state, path);
+                    // TODO: raise events if data has changed 
+                    this.trigger(path + '-change', update);
+                    return Object.assign(stateVal, update);
+                },
+                ...cosinedesign.core.extensions.events
+            };
+        },
+        navigateTo: navigateTo,
+        objectPathToObject: objectPathToObject
     }
 };
+;

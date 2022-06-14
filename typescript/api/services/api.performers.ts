@@ -1,11 +1,11 @@
-import { Performer } from "../../types/events.models";
+import { Performer } from "../../types/models.events";
 import { factory } from "../../models/events.models.factory";
 
-const Musician = factory.build.musician;
+const Performer = factory.build.performer;
 
 export const artistService = {
     get: function () : Performer {
-        return Musician();        
+        return Performer();        
     },
     list: function () : Array<Performer> {
         return [];

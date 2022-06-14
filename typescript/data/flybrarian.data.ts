@@ -1,7 +1,21 @@
-import { Location, RealWorldEvent, Stage } from '../types/events.models';
+/*
+
+The purpose of this file is to merge together all the raw data sources, each abstracted behind a service.
+
+This is the main data store for the live site. 
+
+Functionality here should be limited to associating all data and massaging it so that there are no gaps in lineups, etc.
+
+*/
+
+import { Location, RealWorldEvent } from '../types/models.common';
+import { Stage, Performer } from '../types/models.events';
 import { factory } from '../models/events.models.factory';
-import { artistService } from '../client/services/festival.services.performers';
+
+// Event service handles performers, performances
+import { eventService } from '../client/services/festival.services.events';
 import { configService } from '../client/services/festival.services.config';
+
 
 const config = configService.get();
 const days = config.days;
@@ -22,7 +36,9 @@ function collateLineups(eventSet) : Map<number, Array<RealWorldEvent>> {
 		}
 
 		const lineup = lineups.get(day);
+		// @ts-ignore this is safe due to above lineups.set for that day
 		lineup.push(ev);
+		
 	});
 	
 	return lineups;
@@ -38,9 +54,9 @@ function d (day: number, hour: number, min?) : Date {
 }
 
 const
-	artists = artistService.get(),
+	performers = eventService.performers,
 		// These are actually "stages" in model data
-	camps = {
+	stages = {
 		"bac": c("Bring a Cup"),
 		"glutenFree": c("Gluten Free Halloween"),
 		"lamp": c("Camp Lamp"),
@@ -50,7 +66,7 @@ const
 		"strangeMaine": c("Strange Maine")	
 	};
 
-
+/*
 // dj, camp, day, start, end, description
 // TODO: allow for multiple artists per event
 const data = [
@@ -89,7 +105,7 @@ const data = [
 	1a - 2a	[cosinezero]
 	2a - 3a. 	Vinyl Blight
 	*/
-
+/*
 	// Unsorted / known sets...
 	ev(camps.femmeDomme, artists.ArcRunner, d(days.fri.day, 23)),
 	ev(camps.femmeDomme, artists.Saphire, d(days.satur.day, 0)),
@@ -230,35 +246,45 @@ const data = [
 	ev(camps.bac, artists.chuck, d(days.satur.day, 16), d(days.satur.day, 18),  "Chuck Chuck spins us some party funk & breaks"),
 	ev(camps.bac, artists.chuck, d(days.satur.day, 19), d(days.satur.day, 21),  "Chuck Chuck spins us some hiphop & soul"),
 ];
-
+*/
 // Turn camps object into map
 // Wait... why?
-const campMap = new Map<string, Stage>(),
-	campArray = [],
-	artistsArray = [];
+const stageMap = new Map<string, Stage>(),
+	stageList: Array<Stage> = [],
+	performerList: Array<Performer> = [],
+	performances: Array<Performance> = [];
 
-const keys = Object.keys(camps);
+const keys = Object.keys(stages);
 keys.forEach(function (key) {
-	const camp: Stage = camps[key];
-	campArray.push(camp);
-	campMap.set(key, camp);
+	const stage: Stage = stages[key];
+	stageList.push(stage);
+	stageMap.set(key, stage);
 
 	// Collate lineups into days
 	// Lineups is a map (day, value)
-	const lineups = collateLineups(camp.events);
-	camp.lineups = lineups;
+	const lineups = collateLineups(stage.events);
+	stage.lineups = lineups;
 });
 
 // Turn artists into array
-const artKeys = Object.keys(artists);
+const artKeys = Object.keys(performers);
 artKeys.forEach(function (key) {
-	const a = artists[key];
-	artistsArray.push(a);
+	const a = performers[key];
+	performerList.push(a);
 });
 
+/*
 export const festivalData = {
-	artists: artistsArray,
-	stages: campArray,
-	events: data,
+	performers: performerList,
+	stages: stageList,
+	performances: performances,
 	collateLineups: collateLineups
 };
+*/
+
+export const festivalData = {
+	performers: eventService.data.performers,
+	performances: eventService.data.performances,
+	stages: eventService.data.stages,
+	collateLineups: collateLineups
+}

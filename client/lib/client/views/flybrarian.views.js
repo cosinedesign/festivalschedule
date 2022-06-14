@@ -1,8 +1,9 @@
 import { cosinedesign } from '../../core/cosinedesign.core';
 // aliasing
 const View = cosinedesign.core.view.View, create = cosinedesign.core.ui.create;
-function getDuration(event) {
-    const duration = ((((event.end - event.start) / 1000) / 60) / 60);
+function getDuration(eventTimes) {
+    // @ts-ignore apparently typescript doesn't want to coerce dates to number?
+    const duration = ((((eventTimes.end - eventTimes.start) / 1000) / 60) / 60);
     const hours = Math.floor(duration + .2); // stupid fucking javascript
     var mins = duration - hours;
     const cssClass = 'hours' + hours + (mins ? '-30' : '');
@@ -14,13 +15,13 @@ function getDuration(event) {
     };
 }
 export const views = {
-    // List of all artists with events
-    Artists: function (model) {
+    // List of all performers with events
+    Performers: function (model) {
         return View(model, function () {
         }, function () { }, {});
     },
     // List of camps with a show/hide function to show schedule
-    Camps: function (model) {
+    Stages: function (model) {
         return View(model, function () { }, function () { }, {});
     },
     Genres: function (model) {
@@ -65,10 +66,10 @@ export const views = {
             const els = this.elements;
             //iterate over items in lineup,
             if (model.lineups) {
-                model.lineups.forEach(function (lineup, camp) {
+                model.lineups.forEach(function (lineup, stage) {
                     const lineupView = views.Lineup({
                         lineup: lineup,
-                        camp: camp
+                        stage: stage
                     });
                     els.container.appendChild(lineupView.mount());
                     lineupView.render();
@@ -88,7 +89,7 @@ export const views = {
             return this.container;
         }, function () {
             const els = this.elements;
-            els.header.innerText = model.camp.display;
+            els.header.innerText = model.stage.display || model.stage.name;
             // create timeboxes for 
             this.model.lineup.forEach(function (event) {
                 // insert a 30 or 1hr event
@@ -96,7 +97,7 @@ export const views = {
                 const timeslot = create('div', 'event');
                 // TODO change class to hour / halfhour
                 // find duration                        
-                const duration = getDuration(event);
+                const duration = getDuration(event.when);
                 timeslot.classList.add(duration.class);
                 if (event.who) {
                     if (event.name) {
